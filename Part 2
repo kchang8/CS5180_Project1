@@ -1,1 +1,3 @@
-
+Program that reduces noise:
+  Input: String or HTML file
+  Output: String or HTML file, edited to remove unnecessary text
