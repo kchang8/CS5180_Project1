@@ -1,3 +1,5 @@
 Program that reduces noise:
   Input: String or HTML file
-  Output: String or HTML file, edited to remove unnecessary text
+  Output: String, edited to remove unnecessary text but retain all words and phrases of importance
+
+how to deal with important image text?
