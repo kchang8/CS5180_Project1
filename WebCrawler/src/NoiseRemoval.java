@@ -56,6 +56,11 @@ public class NoiseRemoval {
 		}
 	}
 	
+	//removes all html aspects
+	public static String html2text(String html) {
+	    return Jsoup.parse(html).text();
+	}
+	
 	public void writeToFile(String str, String filePath) {
 		try {
 			FileWriter myWriter = new FileWriter(filePath);
