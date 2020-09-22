@@ -17,8 +17,6 @@ import org.jsoup.select.Elements;
  *
  */
 public class NoiseRemoval {
-	/* I don't think we should remove tags like links and a in case the text is important. 
-	example: <a href="https://stackoverflow.com/questions/1699313/how-to-remove-html-tag-in-java?noredirect=1&amp;lq=1" class="question-hyperlink">How to remove HTML tag in Java</a>*/
 	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script", "style", "a", "link"};
 	private File inputFile;
 	private Document doc; 
