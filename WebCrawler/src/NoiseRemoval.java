@@ -1,5 +1,3 @@
-package edu.cpp.cs.cs5180.project1;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
