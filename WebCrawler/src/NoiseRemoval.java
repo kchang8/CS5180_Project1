@@ -64,11 +64,12 @@ public class NoiseRemoval {
 	    return Jsoup.parse(html).text();
 	}
 	
-	//call this method to get the tags to text ratio. it looks through all tags on the current level
-	public void chop(String s,double d) {
-		//define variable
+	//gets tag to text ratio (of leaf nodes) and removes them if it is above a certain threshold
+	static void tagToTextRatio(String s,double ratio) {
+		//defining variables
 		String openTag;
 		String closeTag;
+		if(s.indexOf("<")==-1|s.indexOf(">")==-1)return;
 		openTag = s.substring(s.indexOf("<"),s.indexOf(">")+1);
 		if(openTag.indexOf(" ") == -1) {
 			closeTag = "</"+openTag.substring(1);
@@ -76,29 +77,28 @@ public class NoiseRemoval {
 		else {
 			closeTag = "</"+openTag.substring(1,openTag.indexOf(" "))+">";
 		}
-		//check if the html tag ever gets closed
+		//if there is no close tag, it is standalone, and should be skipped
 		if(s.indexOf(closeTag)==-1) {
 			System.out.println("couldnt find "+closeTag);
+			tagToTextRatio(s.substring(s.indexOf(openTag)+openTag.length()),ratio);
 		}
 		else {
 			String mid = s.substring(s.indexOf(openTag)+openTag.length(),s.indexOf(closeTag));
-			tagRatio(openTag,mid,closeTag,d);
-		}
-		if(s.indexOf(closeTag)!=-1&&s.substring(s.indexOf(closeTag)+closeTag.length()).contains("<")) {
-			chop(s.substring(s.indexOf(closeTag)+closeTag.length()),d);
-		}
-	}
-	
-	//this supports the above method. it looks deeper into the current tag
-	public void tagRatio(String openTag, String mid, String closeTag,double d) {
-		
-		if(mid.contains("<")) {
-			chop(mid.trim(),d);
-		}else {
-			float f = (float)mid.length()/(float)(openTag.length()+closeTag.length());
-			if(f<d) {
-				stringfile = stringfile.substring(0,stringfile.indexOf(mid))+stringfile.substring(stringfile.indexOf(mid)+mid.length());
+			//traverse 1 level deeper
+			if(mid.contains("<")) {
+				tagToTextRatio(mid.trim(),ratio);
 			}
+			else {
+				//case: leaf node
+				float f = (float)mid.length()/(float)(openTag.length()+closeTag.length());
+				if(f<ratio) {
+					stringfile = stringfile.substring(0,stringfile.indexOf(mid))+stringfile.substring(stringfile.indexOf(mid)+mid.length());
+				}
+			}
+		}
+		//traverse accross
+		if(s.indexOf(closeTag)!=-1&&s.substring(s.indexOf(closeTag)+closeTag.length()).contains("<")) {
+			tagToTextRatio(s.substring(s.indexOf(closeTag)+closeTag.length()),ratio);
 		}
 	}
 	/**
