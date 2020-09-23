@@ -16,9 +16,9 @@ import org.jsoup.select.NodeVisitor;
 /**
  * @author SYL
  *
- */
+ *///maybe not all links should be removed in case they are part of text?
 public class NoiseRemoval {
-	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script", "style", "a", "link", "footer"};
+	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script", "style", "a", "link", "footer", "meta"};
 	private File inputFile;
 	private Document doc; 
 	private String stringfile;
@@ -66,6 +66,7 @@ public class NoiseRemoval {
 	
 	//call this method to get the tags to text ratio. it looks through all tags on the current level
 	public void chop(String s,double d) {
+		//define variable
 		String openTag;
 		String closeTag;
 		openTag = s.substring(s.indexOf("<"),s.indexOf(">")+1);
@@ -75,6 +76,7 @@ public class NoiseRemoval {
 		else {
 			closeTag = "</"+openTag.substring(1,openTag.indexOf(" "))+">";
 		}
+		//check if the html tag ever gets closed
 		if(s.indexOf(closeTag)==-1) {
 			System.out.println("couldnt find "+closeTag);
 		}
