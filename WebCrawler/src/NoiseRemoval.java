@@ -21,6 +21,7 @@ public class NoiseRemoval {
 	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script", "style", "a", "link", "footer"};
 	private File inputFile;
 	private Document doc; 
+	private String stringfile;
 	
 	public NoiseRemoval() {
 	}
@@ -63,6 +64,41 @@ public class NoiseRemoval {
 	    return Jsoup.parse(html).text();
 	}
 	
+	//call this method to get the tags to text ratio. it looks through all tags on the current level
+	public void chop(String s,double d) {
+		String openTag;
+		String closeTag;
+		openTag = s.substring(s.indexOf("<"),s.indexOf(">")+1);
+		if(openTag.indexOf(" ") == -1) {
+			closeTag = "</"+openTag.substring(1);
+		}
+		else {
+			closeTag = "</"+openTag.substring(1,openTag.indexOf(" "))+">";
+		}
+		if(s.indexOf(closeTag)==-1) {
+			System.out.println("couldnt find "+closeTag);
+		}
+		else {
+			String mid = s.substring(s.indexOf(openTag)+openTag.length(),s.indexOf(closeTag));
+			tagRatio(openTag,mid,closeTag,d);
+		}
+		if(s.indexOf(closeTag)!=-1&&s.substring(s.indexOf(closeTag)+closeTag.length()).contains("<")) {
+			chop(s.substring(s.indexOf(closeTag)+closeTag.length()),d);
+		}
+	}
+	
+	//this supports the above method. it looks deeper into the current tag
+	public void tagRatio(String openTag, String mid, String closeTag,double d) {
+		
+		if(mid.contains("<")) {
+			chop(mid.trim(),d);
+		}else {
+			float f = (float)mid.length()/(float)(openTag.length()+closeTag.length());
+			if(f<d) {
+				stringfile = stringfile.substring(0,stringfile.indexOf(mid))+stringfile.substring(stringfile.indexOf(mid)+mid.length());
+			}
+		}
+	}
 	/**
 	 * Traverse the tree
 	 */
