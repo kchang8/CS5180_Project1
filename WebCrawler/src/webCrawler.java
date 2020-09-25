@@ -8,6 +8,7 @@ import java.io.*;
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.PrintWriter;
 
 public class webCrawler {
 	// creates hash map for all the links starting from seed and so on
@@ -15,7 +16,7 @@ public class webCrawler {
 	private HashMap<String, Integer> links;
 	
 	// sets max depth to crawl through
-	private static final int MAX_DEPTH = 2;
+	private static final int MAX_DEPTH = 4;
 	
 	// constructor
 	public webCrawler() {
@@ -64,6 +65,8 @@ public class webCrawler {
 					getLinks(page.attr("abs:href"), depth);
 				}
 			} catch (IOException e) {
+				// prints out error if the url CANNOT be crawled
+				// because of politeness policy or error 
 				System.err.println("For '" + URL + "': " + e.getMessage());
 			}
 		}
@@ -74,10 +77,15 @@ public class webCrawler {
 		// set seed URL
 		wc.getLinks("https://www.cpp.edu/", 0);
 		
-		System.out.println("===FULL LIST OF LINKS CRAWLED===");
-		Map<String, Integer> links = wc.getPageLinks();
-		for (Map.Entry<String, Integer> page : links.entrySet()) {
-			System.out.println("URL: " + page.getKey() + ", Outlinks: " + page.getValue());
+		// writes URL and outlinks to csv file
+		File csvFile = new File("report.csv");
+		try (PrintWriter cFile = new PrintWriter(csvFile)) {
+			Map<String, Integer> links = wc.getPageLinks();
+			for (Map.Entry<String, Integer> page : links.entrySet()) {
+				cFile.append(page.getKey() + ", " + page.getValue() + "\n");
+			}
+		} catch (IOException e) {
+			System.err.println(e.getMessage());
 		}
 	}
 
