@@ -57,7 +57,7 @@ public class webCrawler {
 				Connection.Response response = Jsoup.connect(URL).execute();
 				Document responseDoc = response.parse();
 				// Writes a html file of the current URL into repository folder
-				FileWriter myWriter = new FileWriter("/Users/chu/Desktop/repository/" + document.title().replace(" ", "") + ".html", true);
+				FileWriter myWriter = new FileWriter("../repository/" + document.title().replace(" ", "") + ".html", true);
                                 myWriter.write(responseDoc.outerHtml());
 				myWriter.close();
 				//System.out.println("Page downloaded");
@@ -83,7 +83,7 @@ public class webCrawler {
 		Map<String, Integer> links = wc.getPageLinks();
 		for (Map.Entry<String, Integer> page : links.entrySet()) {
                     
-                        CSVWriter myWriter = new CSVWriter(new FileWriter("/Users/chu/Desktop/repository/" + "report.csv", true));
+                        CSVWriter myWriter = new CSVWriter(new FileWriter("../repository/" + "report.csv", true));
                         myWriter.writeNext(new String[]{page.getKey(), page.getValue().toString()});
                         myWriter.close();
 			                               
