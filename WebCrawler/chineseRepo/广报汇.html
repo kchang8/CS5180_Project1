@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-touch-fullscreen" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <meta name="full-screen" content="yes"> 
+  <meta name="format-detection" content="telephone=no"> 
+  <meta name="format-detection" content="address=no"> 
+  <meta http-equiv="content-type" content="text/html"> 
+  <meta content="always" name="referrer"> 
+  <title>???</title> 
+  <link type="text/css" rel="stylesheet" href="../style/css/gbh_download.css"> 
+ </head> 
+ <body> 
+  <div class="qrcode-lg" style="display: none;"> 
+   <img src="../style/images/qrcode-lg.png" alt="?????"> 
+  </div> 
+  <div class="download-wrap"> 
+   <div class="top-nav"> 
+    <h1><img src="../style/images/logo.png" alt="???"></h1> 
+   </div> 
+   <div class="container"> 
+    <div class="show-area"> 
+     <div>
+      <img src="../style/images/show-01.jpg" alt="???-???">
+     </div> 
+     <div>
+      <img src="../style/images/show-02.jpg" alt="???-??">
+     </div> 
+     <div>
+      <img src="../style/images/show-03.jpg" alt="???-??">
+     </div> 
+     <div>
+      <img src="../style/images/show-04.jpg" alt="???-???">
+     </div> 
+    </div> 
+    <div class="info-area"> 
+     <div class="title"> <strong>??????<p>??????????</p></strong> 
+     </div> 
+     <div class="abst"> 
+      <p>???????•???APP?????????????????????????“?????”?“?????”?“?????”?“?????”?“?????”……??????APP??????????????</p> 
+     </div> <a class="download-btn" href="http://a.app.qq.com/o/simple.jsp?pkgname=com.gmedia.dayooapp" target="_blank"><span>?????APP</span><i></i></a> 
+     <div class="qrcode"> 
+      <img src="../style/images/qrcode.png" alt="?????"> 
+      <p>???????APP</p> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="download-copyright"> <span>????(C) 1999-2016</span><span><a href="http://www.dayoo.com">??????????????(???)</a></span><span>???(002181)???? </span> 
+  </div> 
+  <script src="http://s2.dayoo.com/jq/1.7.2/jquery-1.7.2.min.js"></script> 
+  <script src="../style/js/slick.min.js"></script> 
+  <script>
+		$(function(){
+			$('.show-area').slick({
+				infinite: true,
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				speed: 300
+			});
+			$(".qrcode img").on("click",function(){
+				$(".qrcode-lg").css({height:$(window).height(),width:$(window).width(),display:"block",zIndex:"999"});
+			});
+			$(".qrcode-lg").on("click",function(){
+				$(this).hide();
+			});
+		});
+	</script>  
+ </body>
+</html>

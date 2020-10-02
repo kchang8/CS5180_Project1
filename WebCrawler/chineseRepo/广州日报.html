@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="app"> 
+ <head> 
+  <title id="titleId">????</title> 
+  <meta name="keywords" content="????,???????,??????"> 
+  <meta name="description" content="????,????????,???????,???????????,???????????,?????????????"> 
+  <meta name="robots" content="index,follow"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=1,maximum-scale=1,width=device-width"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+  <link rel="stylesheet" type="text/css" href="trd/bootstrap/css/bootstrap.css"> 
+  <link rel="stylesheet" type="text/css" href="trd/swipe/swiper.min.css"> 
+  <link rel="stylesheet" type="text/css" href="style/home.css"> 
+  <link rel="stylesheet" type="text/css" href="trd/video/style.css"> 
+  <link rel="stylesheet" type="text/css" href="trd/video/vendorstyle.css"> 
+  <link rel="stylesheet" href="sso/css/kendo.common-material.min.css"> 
+  <link rel="stylesheet" href="sso/css/kendo.material.min.css"> 
+  <link rel="stylesheet" href="sso/css/kendo.material.mobile.min.css"> 
+  <script type="text/javascript" src="../common.js"></script> 
+  <script type="text/javascript" src="../sso-cfg.js"></script> <!--angular--> 
+  <script type="text/javascript" src="trd/jquery/jquery-1.11.1.min.js"></script> 
+  <script type="text/javascript" src="trd/angular/angular.min.js"></script> 
+  <script type="text/javascript" src="trd/angular/angular-route.min.js"></script> 
+  <script type="text/javascript" src="services/config.js"></script> 
+  <script type="text/javascript" src="sso/js/kendo.all.min.js"></script> 
+  <script type="text/javascript" src="sso/js/cookie.js"></script> 
+  <script type="text/javascript" src="sso/js/sso-login.js"></script> 
+  <script type="text/javascript" src="trd/angular-ui-bootstrap/ui-bootstrap.js"></script> 
+  <script type="text/javascript" src="trd/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script> 
+  <script type="text/javascript" src="services/mainCtr.js"></script> 
+  <script type="text/javascript" src="services/home.js"></script> 
+  <script type="text/javascript" src="services/commonMethods.js"></script> 
+  <script type="text/javascript" src="services/detailCtr.js"></script> 
+  <script type="text/javascript" src="services/specCtrl.js"></script> 
+  <script type="text/javascript" src="services/detailSpecCtr.js"></script> 
+  <script type="text/javascript" src="trd/bootstrap/js/bootstrap.js"></script> 
+  <script type="text/javascript" src="services/moreModuleCtr.js"></script> 
+ </head> 
+ <body ng-controller="parentCtrl"> 
+  <div ng-include="'tpl/components/nav.html'"></div> 
+  <div style="width: 100%;height: 20px;background: #fff"></div> 
+  <div id="mainContents" style="min-height:6rem;"> 
+   <div ng-view style="background: #f6f6f6;"></div> 
+  </div> 
+  <div ng-include="'tpl/components/footer.html'" style="background: #df0a20;margin-top: 20px"></div> 
+  <img src="static/loading.gif" class="globalLoading" id="globalLoading"> 
+  <div class="user-bar"> 
+   <div id="window"></div> 
+  </div> 
+  <script>
+    window.onload=function(){
+        //????
+        $('.wrapper').navbarscroll();
+        try{
+            if(window._myScroll && global_data.currColumnId){
+                window._myScroll.scrollToElement('#nav_li_' + global_data.currColumnId, 500);
+            }
+        }catch(e){}
+        $(".homeNavTextUl li").eq(lightIndex).siblings().css({color:'#ffffff',fontSize:'0.18rem'});
+        $(".homeNavTextUl li").each(function (index,element) {
+            $(element).css("background","#df0a20");
+        });
+        $("#homeNavChannelTextUl li").each(function (index,element) {
+            $(element).css("background","#ffffff");
+            $(element).find('a').css({color:"#000000",fontSize:'0.18rem'});
+        });
+        $(".homeNavTextUl li").eq(lightIndex).css({color:'#ffffff',fontSize:'0.18rem',background:"#C70014"});
+        $("#homeNavChannelTextUl li").eq(lightIndex).css({background:"#C70014"});
+        $("#homeNavChannelTextUl li").eq(lightIndex).find('a').css({color:"#ffffff",fontSize:'0.18rem'});
+    };
+</script>  
+ </body>
+</html>

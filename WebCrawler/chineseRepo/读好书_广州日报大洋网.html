@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"> 
+  <meta name="robots" content="index, follow"> 
+  <meta name="googlebot" content="index, follow"> 
+  <title>???_???????</title> 
+  <meta name="description" content="??????????·????????????????????24?????????????????????????????????????????????????????"> 
+  <meta name="keywords" content="?????????????????????????"> 
+  <link rel="stylesheet" type="text/css" href="https://moban.dayoo.com/templateRes/201912/16/51593/style.css?v3"> 
+  <script src="https://s2.dayoo.com/jq/1.7.2/jquery-1.7.2.min.js"></script> 
+  <script src="https://moban.dayoo.com/templateRes/201912/16/51593/flexible.min.js"></script> 
+  <script>
+    // ????ie?
+    var DEFAULT_VERSION = 8.0;
+    var ua = navigator.userAgent.toLowerCase();
+    var isIE = ua.indexOf("msie") > -1;
+    var safariVersion;
+    if (isIE) {
+        safariVersion = ua.match(/msie ([\d.]+)/)[1];
+    }
+    if (safariVersion <= DEFAULT_VERSION) {
+        alert('??????????ie8?????????????????????????????')
+    };
+</script> 
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0ba65d2e436ade882ccdf95fad3a4103";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> 
+ </head> 
+ <body> <!-- dayoo-top-nav --> <!-- top-nav --> 
+  <style>
+    *{margin: 0;padding: 0;}
+    .top-nav{background-color: #fff;border-bottom: 1px solid #ededed;border-top: 2px solid #e50012;}
+    .top-nav,.top-nav input{font-family: "Hiragino Sans GB","STHeiti","Microsoft YaHei","????","simsun","sans-serif",Arial;}
+    .top-nav .pull-left{float: left;}
+    .top-nav .pull-right{float: right;}
+    .top-nav a:link,.top-nav a:visited{color:#333;text-decoration:none;}
+    .top-nav a:hover,.top-nav a:active{color:#b40000;text-decoration:none;}
+    .top-nav-inner{width: 1000px;height: 42px;margin: 0 auto;font-size: 14px;}
+    .top-nav-links{width: 620px;overflow: hidden;}
+    .top-nav-links,.top-nav-links li{list-style: none;}
+    .top-nav-links li{float: left;}
+    .top-nav-links li:first-child a:link,.top-nav-links li:first-child a:visited{color: #d61518;}
+    .top-nav-links li a{display: block;padding: 0 10px;line-height: 42px;text-decoration:none;}
+    .top-nav-links li a:link,.top-nav-links li a:visited{color:#333;}
+    .top-nav-links li a:hover,.top-nav-links li a:active{background-color: #ededed;color:#d61518;}
+    .top-nav-other{width: 380px;}
+    .top-nav-other>*{float: right;position: relative;z-index: 999;}
+    .top-nav-other-hd{display: block;padding: 0 15px;line-height: 42px;}
+    .top-nav-other-hd:hover{background-color: #ededed;color:#d61518;text-decoration: none;}
+    .top-nav-other-bd{display: none;position: absolute;top:42px;left:50%;width: 160px;margin-left: -101px;background-color: #fff;border: 1px solid #eaeaea;box-shadow: 0px 2px 4px rgba(0,0,0,.1);}
+    .top-nav-other-bd hr{border: none;border-bottom: 1px solid #ededed;height: 0px;}
+    .top-nav-arrow{position: absolute;top: -10px;left: 50%;width: 20px;height: 20px;margin-left: -10px;font-size: 20px;}
+    .top-nav-arrow i{display: block;width: 20px;height: 20px;overflow: hidden;font-family: simsun;font-style: normal;line-height: 20px;color: #fff;position: absolute;top: 1px;left: 0px;}
+    .top-nav-arrow i:first-child{color: #ededed;top:0;}
+    .top-nav-login .top-nav-login-in-btn{color: #d61518;}
+    .top-nav-login .top-nav-login-item a{font-size: 12px;text-decoration: underline;}
+    .top-nav-login-frame{padding: 20px;}
+    .top-nav-login-frame a.top-nav-login-btn{display: block;height: 30px;margin: 10px 0;background-color: #100964;color: #fff;text-align: center;line-height: 30px;}
+    .top-nav-login-frame .th-login{font-size: 0;margin-top: 20px;}
+    .top-nav-login-frame .th-login a{display: inline-block;width: 53px;height: 40px;background-image: url(https://moban.dayoo.com/public/c/2016/static/images/other-login-icon.png);background-repeat: no-repeat;}
+    .top-nav-login-frame .th-login a#weibologin{background-position: 0 0;}
+    .top-nav-login-frame .th-login a#weixinlogin{background-position: 0 -40px;}
+    .top-nav-login-frame .th-login a#qqlogin{background-position: 0 -80px;}
+    .top-nav-login-frame .th-login a#weibologin:hover{background-position: 0 -120px;}
+    .top-nav-login-frame .th-login a#weixinlogin:hover{background-position: 0 -160px;}
+    .top-nav-login-frame .th-login a#qqlogin:hover{background-position: 0 -200px;}
+    .top-nav-login-item{position: relative;*zoom: 1;}
+    .top-nav-login-item:after{clear: both;display: block;overflow: hidden;height: 0;visibility: hidden;content: ".";}
+    .top-nav-login-item>label,.top-nav-login-item>input{display: block;width: 140px;height: 18px;padding: 5px 10px;font-size: 14px;line-height: 18px;border: 1px solid #ededed;}
+    .top-nav-login-item>label{position: absolute;top:0;left:0;color: #b2b2b2;}
+    .top-nav-login-item>label i{color: #ff7b7b;font-style: normal;}
+    .top-nav-login-item>input{margin-bottom: 10px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}
+    .top-nav-login-item #top_nav_captcha_img{width: 68px;height: 34px;}
+    .top-nav-login-item #top_nav_captcha_btn{margin: 15px 8px 0 0;color: #666;}
+    .top-nav-login-item a.fgp{color: #0a0088;}
+    .top-nav-login-item a.rgs{color: #d61518;}
+    .top-nav-contact-us .top-nav-other-hd i{display: inline-block;width: 8px;height: 5px;background: url(https://moban.dayoo.com/public/c/2016/static/images/other-login-icon.png) no-repeat 0 -250px;vertical-align: middle;margin-left: 5px;}
+    .top-nav-contact-us .top-nav-other-bd{width: 204px;margin-left: -110px;}
+    .top-nav-contact-us .top-nav-other-bd p{padding: 10px 18px;font-size: 14px;line-height: 24px;}
+    .top-nav-login-out-box .top-nav-other-hd:hover{background: none;}
+    .top-nav-login-user-pic{width: 24px;height: 24px;margin: 7px 0px;border: 2px solid #ededed;border-radius: 50%;box-shadow: 0px 0px 2px rgba(0,0,0,0.5);}
+    .top-nav-login-out-user{margin-left: -82px;}
+    .top-nav-login-out-user a{display: block;padding: 10px 18px;}
+    .top-nav-login-out-user a span{display: inline-block;width: 82px;overflow: hidden;-ms-text-overflow: ellipsis;white-space: nowrap;text-overflow: ellipsis;position: relative;top:4px;}
+
+    @media screen and (max-width:768px){
+        body .top-nav{display: block;}
+        .top-nav{border: none;background-color: transparent;}
+        .top-nav-inner{height: auto;width: auto;margin: 0;}
+        .top-nav .top-nav-other{display: none;}
+        .top-nav .top-nav-links{position: absolute;right: 0;top: 0;width: 100px;height: 100%;background: #100964;}
+        .top-nav-links li:first-child a:after{font-size: 14px; content: ""; color: #fff;}
+        .top-nav-links li{float: none;}
+        .top-nav-links li a{border-bottom: 1px solid #282274;text-align: center;color: #fff;}
+        .top-nav-links li a:link, .top-nav-links li a:visited{color: #fff;}
+        .top-nav-links li a:hover{background-color: #060053;border-left: 2px solid #cb1625;}
+        .showmenu{-webkit-transform: translate3d(-100px, 0px, 0px);transition: all 0.2s;}
+        .sidenavHid{display: none;transition: all 0.3s;}
+        .top-nav-links li:first-child a:link,.top-nav-links li:first-child a:visited{
+            line-height: 24px;
+            padding: 10px;
+        }
+
+    }
+
+</style> 
+  <div class="top-nav"> 
+   <div class="top-nav-inner"> 
+    <ul class="top-nav-links pull-left sidenavHid"> 
+     <li><a href="http://www.dayoo.com/" target="_blank">???????</a></li> 
+     <li><a href="http://news.dayoo.com/guangzhou/139995.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/guangdong/139996.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/china/139997.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/world/139998.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/guangzhou/153828.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/finance/139999.shtml" target="_blank">??</a></li> 
+     <li><a href="http://news.dayoo.com/society/140000.shtml" target="_blank">??</a></li> 
+    </ul> 
+    <div class="top-nav-other pull-right"> 
+     <div class="top-nav-other-box top-nav-login"> <!-- <a class="top-nav-other-hd top-nav-login-in-btn" href="javascript:void(0);">??</a> --> 
+      <div class="top-nav-login-frame top-nav-other-bd"> 
+       <div class="top-nav-arrow">
+        <i>?</i><i>?</i>
+       </div> 
+       <div class="top-nav-login-item"> <label for="top_nav_login_name" style="display: block;">?????</label> 
+        <input id="top_nav_login_name" type="text"> 
+       </div> 
+       <div class="top-nav-login-item"> <label for="top_nav_login_password">?????</label> 
+        <input id="top_nav_login_password" type="password"> 
+       </div> 
+       <div class="top-nav-login-item"> <label for="top_nav_login_captcha">???<i>??????</i></label> 
+        <input id="top_nav_login_captcha" type="text"> 
+        <img id="top_nav_captcha_img" class="pull-left" src="http://login.dayoo.com/2015/site/captcha" alt="???"> <a id="top_nav_captcha_btn" class="pull-right" href="javascript:void(0);">??????</a> 
+       </div> <a class="top-nav-login-btn" href="javascript:void(0);">? ?</a> 
+       <div class="loginFHBox" style="display: none;" title="???????">
+        &nbsp;
+       </div> 
+       <div class="top-nav-login-item"> <a class="fgp pull-left" href="http://login.dayoo.com/2015/profile/forgetpwd" target="_blank">????</a> <a class="rgs pull-right" href="http://login.dayoo.com/2015/site/register" target="_blank">??</a> 
+       </div> 
+       <div class="th-login"> <a href="javascript:void(0)" id="weibologin" title="??????"></a> <a href="javascript:void(0)" id="weixinlogin" title="??????"></a> <a href="javascript:void(0)" id="qqlogin" title="QQ????"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="top-nav-other-box top-nav-login-out-box" style="display: none;"> 
+      <div class="top-nav-other-hd"> <a href="http://login.dayoo.com/2015/profile/index" target="_blank"><img class="top-nav-login-user-pic" src="" alt=""></a> 
+      </div> 
+      <div class="top-nav-other-bd top-nav-login-out-user"> 
+       <div class="top-nav-arrow">
+        <i>?</i><i>?</i>
+       </div> <a href="http://login.dayoo.com/2015/profile/index" target="_blank">???<span class="top-nav-login-user"></span></a> 
+       <hr> <a class="top-nav-login-out" href="javascript:void(0);">[ ?? ]</a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script src="https://s2.dayoo.com/jq/1.7.2/jquery-1.7.2.min.js"></script> <!-- <script src="https://moban.dayoo.com/public/c/2016/static/js/dy.login.min.js"></script> --> <!-- top-nav end--> <!-- dayoo-top-nav end--> <!--warp--> 
+  <div class="wrap"> <!--banner--> 
+   <div class="banner"> 
+    <img src="https://moban.dayoo.com/templateRes/201912/16/51593/images/banner.jpg?v=1" alt=""> <a href="https://shop209545.m.youzan.com/wscgoods/detail/pr4f9153?redirect_count=1" target="_blank" class="tag"><img src="https://moban.dayoo.com/templateRes/201912/16/51593/images/banner-tag.png" alt=""></a> <!-- click --> <a href="http://m.dayoo.com/read/201912/19/159081_52982820.htm" target="_blank" class="box"> <img src="https://moban.dayoo.com/templateRes/201912/16/51593/images/icon.png" alt="" class="img"> </a> 
+   </div> <!--banner end--> <!--container--> 
+   <div class="col1 grid"> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/Ocupo-l9_fhNcf9V2fK_fw" target="_blank">5·20 | ???????——?????????“????”</a></h2> <a href="https://mp.weixin.qq.com/s/Ocupo-l9_fhNcf9V2fK_fw" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/a67ef2d7-2ec1-4eaf-a55a-8f82c27e46ec.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/Ocupo-l9_fhNcf9V2fK_fw" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/Pvuv7NHATZV-rOaP40v2hQ" target="_blank">“5·18”??????? ??????“???????”</a></h2> <a href="https://mp.weixin.qq.com/s/Pvuv7NHATZV-rOaP40v2hQ" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/0738e90b-3f50-45c8-8ba0-0c410d2b9a38.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/Pvuv7NHATZV-rOaP40v2hQ" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/hhD_UjXbgQaO-4LKG8Vykg" target="_blank">????????????????????????????????</a></h2> <a href="https://mp.weixin.qq.com/s/hhD_UjXbgQaO-4LKG8Vykg" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/t2_(0X2X580X328)471216e5-2663-4548-be84-0157fa33f51f.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/hhD_UjXbgQaO-4LKG8Vykg" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/6GGO7qnxxoOSxZLvw2xpuw" target="_blank">?? | ???????????</a></h2> <a href="https://mp.weixin.qq.com/s/6GGO7qnxxoOSxZLvw2xpuw" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/t2_(3X4X600X338)083256b6-201b-448d-a6bf-cddf587c3d78.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/6GGO7qnxxoOSxZLvw2xpuw" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/iNWZS-BpviAtjn_ckpjW3w" target="_blank">????????????????????</a></h2> <a href="https://mp.weixin.qq.com/s/iNWZS-BpviAtjn_ckpjW3w" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/0eee35fc-b6f4-47bb-bdf1-0853ab403822.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/iNWZS-BpviAtjn_ckpjW3w" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/YfmMj_FGKcWzdkLHXdU45g" target="_blank">???????????????????????????</a></h2> <a href="https://mp.weixin.qq.com/s/YfmMj_FGKcWzdkLHXdU45g" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/37d5ed67-e855-4d97-a907-3c38262705ac.png" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/YfmMj_FGKcWzdkLHXdU45g" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/MMGNgBl6b0EeBYmwYLMkLQ" target="_blank">??????????????????</a></h2> <a href="https://mp.weixin.qq.com/s/MMGNgBl6b0EeBYmwYLMkLQ" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/0328236e-0be1-4fc0-bdda-a8c234d67e15.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/MMGNgBl6b0EeBYmwYLMkLQ" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://mp.weixin.qq.com/s/exUkxnJ9sdQR-Gn2ZsrN3g" target="_blank">????VS?? | ????????????????</a></h2> <a href="https://mp.weixin.qq.com/s/exUkxnJ9sdQR-Gn2ZsrN3g" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/21/b4a71814-eb42-4d84-a871-b369972985a2.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p><a href="https://mp.weixin.qq.com/s/exUkxnJ9sdQR-Gn2ZsrN3g" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend"></div> 
+     <h2 class="title"><a href="https://m.dayoo.com/read/202005/07/159081_53329887.htm" target="_blank">“??”?????100?????????????????“?????”</a></h2> <a href="https://m.dayoo.com/read/202005/07/159081_53329887.htm" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202005/07/7fbda399-ce17-485b-b4e5-634ddef31fb1.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p>?????????????“???”?????????????????????????????5000?????????1/3???????<a href="https://m.dayoo.com/read/202005/07/159081_53329887.htm" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend">
+      ????
+     </div> 
+     <h2 class="title"><a href="https://m.dayoo.com/read/202004/28/159081_53315708.htm" target="_blank">?? | “????”????????</a></h2> <a href="https://m.dayoo.com/read/202004/28/159081_53315708.htm" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202004/28/393a2cfe-c4d1-4b78-9557-04280a3cde37.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p>?????70?????“????”??????<a href="https://m.dayoo.com/read/202004/28/159081_53315708.htm" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend">
+      ????
+     </div> 
+     <h2 class="title"><a href="https://m.dayoo.com/read/202004/26/159081_53311210.htm" target="_blank">??????????????????~</a></h2> <a href="https://m.dayoo.com/read/202004/26/159081_53311210.htm" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202004/26/28a8c498-6bcf-4f9b-ad27-e1c4d4d8e1f0.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p>????????????????????????????????????????????????????????????<a href="https://m.dayoo.com/read/202004/26/159081_53311210.htm" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+    <div class="box"> 
+     <div class="Recommend">
+      ????
+     </div> 
+     <h2 class="title"><a href="https://m.dayoo.com/read/202004/23/159081_53304436.htm" target="_blank">??? | ??????????“??”</a></h2> <a href="https://m.dayoo.com/read/202004/23/159081_53304436.htm" target="_blank" class="img"><img src="https://dayooimg.dayoo.com/read/202004/23/t2_(7X192X289X351)86e5eb59-6262-4f2b-ade1-4613d9e7eacf.jpg" alt=""></a> 
+     <div class="txt"> 
+      <p>????????????????????????????????????????????????????????????????????????????????????“????”?<a href="https://m.dayoo.com/read/202004/23/159081_53304436.htm" target="_blank">[??]</a></p> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="more">
+     ???? 
+   </div> 
+   <div class="end">
+    ??????...
+   </div> <!--container end--> 
+  </div> <!--warp--> 
+  <script src="https://s2.dayoo.com/jq/1.7.2/jquery-1.7.2.min.js"></script> 
+  <script src="https://moban.dayoo.com/templateRes/201912/16/51593/masonry.pkgd.js"></script> 
+  <script src="https://moban.dayoo.com/templateRes/201912/16/51593/imagesloaded.pkgd.js"></script> <!--<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>--><!--???????????--> 
+  <script>
+    $(document).ready(function (param) {
+        var $grid = $('.grid');
+        $grid.imagesLoaded(function () {
+            $grid.masonry({
+                // options
+                itemSelector: '.box',
+                columnWidth: 340,
+                // columnWidth: 180,
+                // isFitWidth: true,//????????????????false
+                sAnimated: true,//????jquery???????
+                isRTL: false,//??????????????????????????????????????false??????
+                isResizable: true,//????????true
+            });
+        });
+
+        // ??????
+        function tores() {
+            var tmpWid = $(window).width();
+            console.log(tmpWid >= 375)
+            if (tmpWid > 1030) {
+                tmpWid = 1030;
+            }
+            else if (tmpWid >= 375 && tmpWid < 768) {
+                tmpWid = 360;
+                $grid.imagesLoaded(function (param) {
+                    $grid.masonry({
+                        columnWidth: 180
+                    })
+                })
+            }
+            else if (tmpWid <= 360) {
+                var column = Math.floor(tmpWid / 320);
+                // tmpWid = column * 320;
+                tmpWid = 300;
+            }
+            else {
+                var column = Math.floor(tmpWid / 320);
+                tmpWid = column * 320;
+                // tmpWid = 300;
+            }
+            $('.col1').width(tmpWid);
+        }
+        tores();
+        $(window).resize(function () {
+            tores();
+        });
+
+        // ????
+        var DW_data = [
+            
+						{
+			'title': '??????| “????”?????“??”?',
+			'url': 'https://m.dayoo.com/read/202004/21/159081_53299567.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202004/21/t2_(0X108X295X274)20441722-7ca8-4a10-9386-6ab8a839ec01.jpg',
+			'abstract': '?????????“????”?????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????“???”???????????',
+			'url': 'https://m.dayoo.com/read/202004/17/159081_53292441.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202004/17/a84269b2-84a1-48e9-a7f8-689ecc4b7402.jpg',
+			'abstract': '????????????????????????????????????????????“???”?',
+			'looked': '????'
+			},
+			{
+			'title': '????????6????????????',
+			'url': 'https://m.dayoo.com/read/202004/16/159081_53290466.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202004/16/fc62f892-6e73-4813-8109-5fb17fab44e6.jpg',
+			'abstract': '???????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????23?????????????????',
+			'url': 'https://m.dayoo.com/read/202004/15/159081_53287956.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202004/15/be72af91-5d19-4cc3-ac53-5d3f6a0bb50b.jpg',
+			'abstract': '?????23??????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????3???????????????',
+			'url': 'https://m.dayoo.com/read/202004/14/159081_53285533.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202004/14/ba9a43fe-8017-442a-9805-b3d555f6c4b1.jpg',
+			'abstract': '???????????????????????????????????????????????????????????????????????????“??”?????',
+			'looked': ''
+			},
+			{
+			'title': '??????????????????',
+			'url': 'https://m.dayoo.com/read/202003/31/159081_53239854.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/31/ad668ee0-61ed-4879-ba18-963ef9a4838b.jpg',
+			'abstract': '??????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '????????·???????????????????',
+			'url': 'https://m.dayoo.com/read/202003/30/159081_53237019.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/30/f3268a8b-318e-43ca-9610-9d2856b7d8dd.jpg',
+			'abstract': '????·???????????????20????????????????????“???????????????????????????????”?',
+			'looked': '????'
+			},
+			{
+			'title': '??????????',
+			'url': 'https://m.dayoo.com/read/202003/30/159081_53232177.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/30/d7077785-ebde-429e-b0ab-86c90d9b744a.jpg',
+			'abstract': '“?”????????????????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '????????',
+			'url': 'http://m.dayoo.com/read/202003/24/159081_53224669.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/24/a7f66a44-35b3-4e5d-82f8-6f759feb900f.jpg',
+			'abstract': '?????????????2020?????????????????????????“????”????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????',
+			'url': 'http://m.dayoo.com/read/202003/20/159081_53216630.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/20/9e553160-cfce-4304-97ad-eec8d40b11ba.jpg',
+			'abstract': '??????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????',
+			'url': 'http://m.dayoo.com/read/202003/20/159081_53216555.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/20/89fa14af-165c-478f-b80f-953fb0364586.jpg',
+			'abstract': '????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '????????????????',
+			'url': 'http://m.dayoo.com/read/202003/17/159081_53207245.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/17/3e240c76-af3e-43ff-9a09-8949d935c091.jpg',
+			'abstract': '????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????',
+			'url': 'http://m.dayoo.com/read/202003/13/159081_53197425.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/13/a3cf15f8-59db-4b7a-ad89-6842ce885463.jpg',
+			'abstract': '?????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '???????????',
+			'url': 'http://m.dayoo.com/read/202003/12/159081_53194227.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/12/52575e4e-f412-435a-a371-05064c162df8.jpg',
+			'abstract': '???????????????????????????????????????????????????????——???',
+			'looked': '????'
+			},
+			{
+			'title': '?????100???????????????????',
+			'url': 'http://m.dayoo.com/read/202003/12/159081_53194177.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/12/c724d8e5-49ed-42cc-bba2-2d46639bfeb0.jpg',
+			'abstract': '???????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????',
+			'url': 'http://m.dayoo.com/read/202003/12/159081_53185246.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/12/87c3e84e-80d5-4ddb-8ac3-b006c992e305.jpg',
+			'abstract': '“??????”?????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '“?????”??????????',
+			'url': 'http://m.dayoo.com/read/202003/12/159081_53185158.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/12/2f67f6d1-3dcf-4271-8c57-f70fc284cf02.jpg',
+			'abstract': '?“??”?????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53184096.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/535f68a2-1998-4904-b57a-cf5c28bc407d.jpg',
+			'abstract': '?????????“???”???????“??”???????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '????????????????????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53184060.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/6f75d385-c5c2-471b-bd75-50f27f64258d.jpg',
+			'abstract': '??????????????????????????????????????????????????????????21?????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '???????????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53184026.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/57e4abed-53c5-4a00-b835-c2c2f78d3f9d.jpg',
+			'abstract': '??????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53184013.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/9090045b-0cc8-4e1b-8c79-797c36936faa.jpg',
+			'abstract': '??????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53183198.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/3acbaa3b-ea96-43d4-93a2-bd44408cde80.jpg',
+			'abstract': '???????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????????',
+			'url': 'http://m.dayoo.com/read/202003/11/159081_53183074.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202003/11/a8b93b4a-d967-4141-ad3b-193fbbb3e228.jpg',
+			'abstract': '????????????????????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????',
+			'url': 'http://m.dayoo.com/read/202001/23/159081_53044051.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/23/t2_(0X134X323X316)7fa94b42-9692-42a5-bb8f-79f77ff0e59d.jpg',
+			'abstract': '??????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????',
+			'url': 'http://m.dayoo.com/read/202001/22/159081_53043422.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/22/t2_(0X54X320X234)40a7ba30-ed3f-411c-aa93-8cbf2c604446.jpg',
+			'abstract': '??????????????????????????????????????????????????????????????8??????????',
+			'looked': '????'
+			},
+			{
+			'title': '??“??”??????????????',
+			'url': 'http://m.dayoo.com/read/202001/19/159081_53037929.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/19/t2_(42X0X590X308)7419d18b-166b-4d5e-bf11-ceeb7f113714.jpg',
+			'abstract': '??????????????????“??”????????Boy……',
+			'looked': '????'
+			},
+			{
+			'title': '1990—2018?????????????',
+			'url': 'http://m.dayoo.com/read/202001/17/159081_53032601.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/17/t2_(0X0X600X338)278a2749-2c6d-42ab-81f0-0ffacc7b648f.jpg',
+			'abstract': '???????????????????????????????????????????????????????——??',
+			'looked': '????'
+			},
+			{
+			'title': '???????5?????????????',
+			'url': 'http://m.dayoo.com/read/202001/16/159081_53030783.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/16/t2_(0X23X593X357)cfe8e5e2-2c70-46c5-ac9f-0fb3013df65a.jpg',
+			'abstract': '?????????????????????????????????????????????——???',
+			'looked': '????'
+			},
+			{
+			'title': '???????????????',
+			'url': 'http://m.dayoo.com/read/202001/14/159081_53021991.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/14/t2_(0X32X600X370)24b5aae1-7d79-4ae5-8f3c-c067273d53d6.jpg',
+			'abstract': '???????????????????????????????????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??2019??????????',
+			'url': 'http://m.dayoo.com/read/202001/09/159081_53018378.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/09/t2_(0X43X502X325)3781c067-7679-4c7f-86cf-b703c7037610.jpg',
+			'abstract': '????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '2020?????????????',
+			'url': 'http://m.dayoo.com/read/202001/07/159081_53015644.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/07/t2_(0X0X599X337)bbb7dc4e-1303-4648-af32-53c518ada328.jpg',
+			'abstract': '????21??10?????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '600???????',
+			'url': 'http://m.dayoo.com/read/202001/07/159081_53013620.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/07/t2_(1X52X600X389)b2c87850-712e-4cf2-9654-29098963e887.jpg',
+			'abstract': '?????????112?????????????????????????????????????????……',
+			'looked': '????'
+			},
+			{
+			'title': '2019???????????~',
+			'url': 'http://m.dayoo.com/read/202001/07/159081_53007581.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/07/t2_(0X64X600X402)cc3bd645-54b7-49bb-8ea9-cd2298fbd827.jpg',
+			'abstract': '2019??“????”????????300??????????????????????……???2019????????????????????~',
+			'looked': '????'
+			},
+			{
+			'title': '2019???????????????',
+			'url': 'http://m.dayoo.com/read/202001/07/159081_53007568.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/07/t2_(0X0X599X337)75b80977-e2e5-4d9b-90c7-1305501cef5f.jpg',
+			'abstract': '???????????????????——????',
+			'looked': '????'
+			},
+			{
+			'title': '???·?????????????????????',
+			'url': 'http://m.dayoo.com/read/202001/07/159081_53007547.htm',
+			'src': 'https://dayooimg.dayoo.com/read/202001/07/t2_(1X35X600X372)3c734b28-dac8-44f6-bd1b-9ea5a73a9682.jpg',
+			'abstract': '??????????????????????……',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????????',
+			'url': 'http://m.dayoo.com/read/201912/25/159081_52994193.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/25/t2_(3X25X599X360)7ed6a255-aa81-4d0b-bfcb-9c2b827f50d4.jpg',
+			'abstract': '????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '???????????',
+			'url': 'http://m.dayoo.com/read/201912/19/159081_52983853.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/19/dc594092-6c7c-43c0-bb9a-b2547827e5a5.jpg',
+			'abstract': '????????????????????????????????????????????????????????????????8?????',
+			'looked': '????'
+			},
+			{
+			'title': '????????????????????',
+			'url': 'http://m.dayoo.com/read/201912/18/159081_52980478.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/18/t2_(2X0X599X336)27923caa-9d60-43e3-868d-5a877180294a.jpg',
+			'abstract': '??????????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????????',
+			'url': 'http://m.dayoo.com/read/201912/18/159081_52980431.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/18/t2_(1X1X500X282)a1e722fd-9b65-4aaa-b870-874ee98682e9.jpg',
+			'abstract': '?????????????????????????????????????????????????????????“????????”?????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '??????????????????',
+			'url': 'http://m.dayoo.com/read/201912/18/159081_52980252.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/18/t2_(2X0X599X336)a3ffcd3e-831a-42d5-a1ac-4bcebb9203cf.jpg',
+			'abstract': '?????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????? ?????????????????',
+			'url': 'http://m.dayoo.com/read/201912/17/159081_52979068.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/17/t2_(80X2X544X263)ba23e27e-3a13-4f59-8e21-1e7e2ec75afe.jpg',
+			'abstract': '2019????????1000???1019-2019????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????',
+			'url': 'http://m.dayoo.com/read/201912/18/159081_52980021.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/18/t2_(6X44X500X322)90115c54-96ff-46fa-8804-0b99402406d1.jpg',
+			'abstract': '??????????????????????????????????????……',
+			'looked': '????'
+			},
+			{
+			'title': '?????????????????',
+			'url': 'http://m.dayoo.com/read/201912/17/159081_52978799.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/17/0ad9a011-1849-4ec2-ae79-b405d391fd69.jpg',
+			'abstract': '??????????????????????????????????????????????????????????????????????????????????????',
+			'looked': '????'
+			},
+			{
+			'title': '???????',
+			'url': 'http://m.dayoo.com/read/201912/19/159081_52982820.htm',
+			'src': 'https://dayooimg.dayoo.com/read/201912/19/0a0b5c37-509a-459a-9f7c-3b1cbb1f3d90.jpg',
+			'abstract': '????2020??????~',
+			'looked': ''
+			},
+
+        ]
+
+        // ??
+        var data = 0;
+        var length = 12;
+        $(".more").on("click", function () {
+            all();
+            data += 12;
+            length += 12;
+        })
+        // all();
+        function all() {
+            for (var i = data; i < length; i++) {
+                console.log(length)
+                if (i >= DW_data.length) {
+                    $(".more").fadeOut();
+                    $(".end").fadeIn();
+                    break
+                } else {
+                    var html = '<div class="box">';
+                    html += '<div class="Recommend">' + DW_data[i].looked + '</div>';
+                    html += '<h2 class="title"><a href="' + DW_data[i].url + '" target="_blank">' + DW_data[i].title + '</a></h2>';
+
+                    html += '<a href="' + DW_data[i].url + '" target="_blank" class="img"><img src="' + DW_data[i].src + '" alt="" ></a>'
+
+                    html += '<div class="txt">';
+                    html += '<p>' + DW_data[i].abstract + '<a href="' + DW_data[i].url + '" target="_blank">[??]</a></p>';
+                    html += '</div>';
+                    html += '</div>';
+
+                    var n = $(html).appendTo($(".col1"));
+                    $grid.masonry('appended', n, true);
+                }
+            }
+        }
+    })
+</script> 
+  <script type="text">
+    /*share*/
+    function wxShare() {
+        
+                var shareTxt = "5·20 | ???????——?????????“????”";
+        var sharephoto= "https://dayooimg.dayoo.com/read/202005/21/a67ef2d7-2ec1-4eaf-a55a-8f82c27e46ec.jpg";
+        var shareesac = "";
+
+        var shareurl = "";// ??
+        $.ajax({
+            url: "https://mp.i.dayoo.com/activityinterface/wechat/share",
+            dataType: 'jsonp',
+            success: function (response) {
+                if (typeof response.timestamp != 'undefined' && typeof response.nonceStr != 'undefined' && typeof response.signature != 'undefined') {
+                    wx.config({
+                        debug: false,
+                        appId: response.appId,
+                        timestamp: response.timestamp,
+                        nonceStr: response.nonceStr,
+                        signature: response.signature,
+                        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo']
+                    });
+                    wx.ready(function () {
+                        wx.onMenuShareTimeline({
+                            title: shareTxt,
+                            link: shareurl,
+                            imgUrl: sharephoto,
+                            success: function () {
+                                console.log('????');
+                            }
+                        });
+                        wx.onMenuShareAppMessage({
+                            title: shareTxt,
+                            desc: shareesac,
+                            link: shareurl,
+                            imgUrl: sharephoto,
+                            success: function () {
+                                console.log('????');
+                            }
+                        });
+                        wx.onMenuShareQQ({
+                            title: shareTxt,
+                            desc: shareesac,
+                            link: shareurl,
+                            imgUrl: sharephoto
+                        });
+                        wx.onMenuShareWeibo({
+                            title: shareTxt,
+                            desc: shareesac,
+                            link: shareurl,
+                            imgUrl: sharephoto
+                        });
+                    });
+                }
+            }
+        });
+    }
+    wxShare();
+</script> <!-- footer --> <!-- copyright --> 
+  <style>
+	#dayoo_footer {clear:both;background-color:#f3f3f3;padding:50px
+	0;color:#666;font-size:14px;line-height:24px;font-family:Microsoft Yahei,PingFang SC,Lantinghei SC,Hiragino Sans
+	GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans;text-align:center;margin: 10px 0 0 0;}
+	#dayoo_footer .dayoo_footer_bd {width:1060px;margin:0 auto;overflow:hidden;}
+	#dayoo_footer .menu {float:left;width:252px;padding:30px 10px;border-right:1px solid #ccc;}
+	#dayoo_footer .menu img {margin:0 auto 10px;}
+	#dayoo_footer .dayoo_copyright {float:right;width:768px;}
+	#dayoo_footer p {margin-top:5px;color:#333;}
+	.dayoo_copyright .web_info {margin-top:-10px;}
+	.dayoo_copyright .web_info p {float:left;width:340px;text-align:left;}
+	.dayoo_copyright .gzrb_info {clear:both;padding-top:15px;text-align:left;overflow:hidden;}
+	.dayoo-footer-img {width:646px;height:47px;margin:10px 0 0 0;}
+	.dayoo-footer-img div {width:112px;height:38px;float:left;border:1px solid #d0d0d0;padding:3px 5px 4px 5px;margin:0
+	3px;background-color:#fff;}
+	.dayoo-footer-img div img {float:left;border:none;}
+	.dayoo-footer-img div span {float:right;line-height:20px;margin-right:8px;}
+	.dayoo-footer-knet.dayoo-footer-knet {float:left;margin-top:0 !important;}
+	.daoo_footer_info{display: none;}
+	@media screen and (max-width:1024px) {#dayoo_footer {padding:5px 0;}
+	.dayoo_footer {text-align:center;font-size:12px;line-height:20px;padding:10px 0;}
+	#dayoo_footer p{margin: 0;}
+	.dayoo_footer_bd>* {display:none;}
+	.daoo_footer_info{display: block;}
+	}
+
+</style> 
+  <div id="dayoo_footer" class="dayoo_footer"> 
+   <div class="dayoo_footer_bd"> 
+    <div class="menu"> 
+     <img src="https://moban.dayoo.com/templateRes/202001/02/51600/images/index-logo.png" alt="???????" class="logo"> 
+     <p>??????????????(???)<br>????(C)</p> 
+     <p>???(002181)????</p> 
+    </div> 
+    <div class="dayoo_copyright"> 
+     <div class="web_info"> 
+      <p><a href="https://www.dayoo.com/about/zhengshu/hlwxwxkz/xinxifuwu2019.html" target="_blank">?????????????44120180003</a></p> 
+      <p><a href="https://www.dayoo.com/about/zhengshu/stxkz/shiting.html" target="_blank">??????????????1906152</a></p> 
+      <p><a href="https://www.dayoo.com/about/zhengshu/hlwxwxkz/chuban2019.html" target="_blank">?????????? (?)???(?)?036?</a></p> 
+      <p><a href="http://www.beian.miit.gov.cn/" target="_blank">?????????????B2-20040381?-6</a></p> 
+     </div> 
+     <div class="gzrb_info"> 
+      <p>????????????????????????jjzswxcb@gz.gov.cn</p> 
+      <p>???????????????gzrbjj@gzdaily.com</p> 
+      <p>?????????????????020-81163454?020-81163684?020-81163448 ?????dayoo@gdgzrb.com</p> 
+     </div> 
+     <div class="dayoo-footer-img"> 
+      <div> <a rel="nofollow" target="_blank" href="http://www.12377.cn"><img width="40" height="40" border="0" src="https://moban.dayoo.com/public/dylc/ad/files/2014/tupianku/home_b_1.gif" alt="????????"></a> <span><a rel="nofollow" target="_blank" href="http://www.12377.cn">????<br>????</a></span> 
+      </div> 
+      <div> <span style="float:left;margin-left:8px;"><a rel="nofollow" target="_blank" href="http://www.12377.cn/node_548446.htm">????<br>APP??</a></span> <a rel="nofollow" target="_blank" href="http://www.12377.cn/node_548446.htm"><img width="40" height="40" border="0" align="right" src="https://moban.dayoo.com/public/dylc/ad/files/2014/tupianku/jbzq_img_1.gif" alt="????????"></a> 
+      </div> 
+      <p class="dayoo-footer-knet"> <script src="https://kxlogo.knet.cn/seallogo.dll?sn=e13060444010041057nlvy000000&amp;size=0">
+					</script> </p> 
+      <div> <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602000346" target="_blank"><img height="40" width="40" border="0" alt="?????44010602000346?" src="https://moban.dayoo.com/templateRes/202001/02/51600/images/beianbgs.png"></a> <span style="float:right;margin-right:0px;line-height: 16px;"><a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602000346" target="_blank">?????</a></span> <span style="float:right;margin-right:0px;line-height: 12px;"><a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602000346" target="_blank">44010602</a></span> <span style="float:right;margin-right:0px;line-height: 12px;"><a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602000346" target="_blank">000346?</a></span> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="daoo_footer_info"> 
+    <p>??????????????(???)<br>????(C)</p> 
+    <p>???(002181)????</p> 
+   </div> 
+  </div> <!-- copyright end--> <!--  miaoguang 20130716 start --> 
+  <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fceab34fdb9f527007bdc9999eb64f86c' type='text/javascript'%3E%3C/script%3E"));
+</script> <!--  end --> <!-- Start Alexa Certify Javascript
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"eRrmj1aEsk00iL", domain:"dayoo.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=eRrmj1aEsk00iL" style="display:none" height="1" width="1" alt="" /></noscript>
+End Alexa Certify Javascript --> <!-- 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-1725443-12']);
+  _gaq.push(['_setDomainName', 'dayoo.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+ --> 
+  <script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https'){
+   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script> <!-- footer endding -->  
+ </body>
+</html>
