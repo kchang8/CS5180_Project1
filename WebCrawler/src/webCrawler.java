@@ -53,7 +53,7 @@ public class webCrawler {
 				Connection.Response response = Jsoup.connect(URL).execute();
 				Document responseDoc = response.parse();
 				// Writes a html file of the current URL into repository folder
-				FileWriter myWriter = new FileWriter("./repository/" + document.title().replace(" ", "") + ".html", true);
+				FileWriter myWriter = new FileWriter("./repository/" + document.title().replace(" ", "").replace(":", "").replace("|", "") + ".html", true);
 				myWriter.write(responseDoc.outerHtml());
 				myWriter.close();
 				System.out.println("Successfully downloaded page");
