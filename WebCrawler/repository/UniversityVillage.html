@@ -1,0 +1,635 @@
+<!doctype html>
+<html class="no-js" lang="en-US"> 
+ <head> 
+  <title>University Village</title> 
+  <script>
+      var bwg_admin_ajax = 'http://cppvillage.com/wp-admin/admin-ajax.php?action=shortcode_bwg';
+      var bwg_ajax_url = 'http://cppvillage.com/wp-admin/admin-ajax.php?action';
+      var bwg_plugin_url = 'http://cppvillage.com/wp-content/plugins/photo-gallery';
+      document.addEventListener('DOMContentLoaded', function(){ // Analog of $(document).ready(function(){
+        bwg_check_ready = function () {}
+        document.onkeyup = function(e){
+          if ( e.keyCode == 27 ) {
+            bwg_remove_loading_block();
+          }
+        };
+      });
+
+      // Set shortcode popup dimensions.
+      function bwg_set_shortcode_popup_dimensions() {
+        var H = jQuery(window).height(), W = jQuery(window).width();
+        jQuery("#TB_title").hide().first().show();
+        // New
+        var tbWindow = jQuery('#TB_window');
+        if (tbWindow.size()) {
+          tbWindow.width(W).height(H);
+          jQuery('#TB_iframeContent').width(W).height(H);
+          tbWindow.attr('style',
+            'top:'+ '0px !important;' +
+            'left:' + '0px !important;' +
+            'margin-left:' + '0;' +
+            'z-index:' + '1000500;' +
+            'max-width:' + 'none;' +
+            'max-height:' + 'none;' +
+            '-moz-transform:' + 'none;' +
+            '-webkit-transform:' + 'none'
+          );
+        }
+        // Edit
+        var tbWindow = jQuery('.mce-window[aria-label="Photo Gallery"]');
+        if (tbWindow.length) {
+          // To prevent wp centering window with old sizes.
+          setTimeout(function() {
+            tbWindow.width(W).height(H);
+            tbWindow.css({'top': 0, 'left': 0, 'margin-left': '0', 'z-index': '1000500'});
+            tbWindow.find('.mce-window-body').width(W).height(H);
+          }, 10);
+        }
+      }
+      // Create loading block.
+      function bwg_create_loading_block() {
+        jQuery('body').append('<div class="loading_div" style="display:block; width: 100%; height: 100%; opacity: 0.6; position: fixed; background-color: #000000; background-image: url('+ bwg_plugin_url +'/images/spinner.gif); background-position: center; background-repeat: no-repeat; background-size: 50px; z-index: 1001000; top: 0; left: 0;"></div>');
+      }
+      // Remove loading block.
+      function bwg_remove_loading_block() {
+        jQuery(".loading_div", window.parent.document).remove();
+        jQuery('.loading_div').remove();
+      }
+	  </script> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="profile" href="http://gmpg.org/xfn/11"> 
+  <link rel="pingback" href="http://cppvillage.com/xmlrpc.php"> 
+  <meta name="theme-color" content="ffffff">
+  <link rel="dns-prefetch" href="//cppvillage.com"> 
+  <link rel="dns-prefetch" href="//fonts.googleapis.com"> 
+  <link rel="dns-prefetch" href="//mktcppfoundation-001-site14.itempurl.com"> 
+  <link rel="dns-prefetch" href="//s.w.org"> 
+  <link rel="alternate" type="application/rss+xml" title="University Village » Feed" href="http://cppvillage.com/feed/"> 
+  <link rel="alternate" type="application/rss+xml" title="University Village » Comments Feed" href="http://cppvillage.com/comments/feed/"> 
+  <link rel="alternate" type="text/calendar" title="University Village » iCal Feed" href="http://cppvillage.com/events/?ical=1"> 
+  <style id="icelander-text-widget-icon-fallback">.widget-symbol::before { content: "?"; font-family: inherit; }</style> 
+  <script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/cppvillage.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.7"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script> 
+  <style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style> 
+  <link rel="stylesheet" id="sb_instagram_styles-css" href="http://cppvillage.com/wp-content/plugins/instagram-feed/css/sb-instagram-2-0-2.min.css?ver=2.0.2" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-reset-style-css" href="http://cppvillage.com/wp-content/plugins/the-events-calendar/common/src/resources/css/reset.min.css?ver=4.9.16" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-common-style-css" href="http://cppvillage.com/wp-content/plugins/the-events-calendar/common/src/resources/css/common.min.css?ver=4.9.16" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tribe-tooltip-css-css" href="http://cppvillage.com/wp-content/plugins/the-events-calendar/common/src/resources/css/tooltip.min.css?ver=4.9.16" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-library-css" href="http://cppvillage.com/wp-includes/css/dist/block-library/style.min.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-components-css" href="http://cppvillage.com/wp-includes/css/dist/components/style.min.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-font-css" href="https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C400i%2C700%2C700i&amp;ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-block-editor-css" href="http://cppvillage.com/wp-includes/css/dist/block-editor/style.min.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-nux-css" href="http://cppvillage.com/wp-includes/css/dist/nux/style.min.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wp-editor-css" href="http://cppvillage.com/wp-includes/css/dist/editor/style.min.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="sld_block-cgb-style-css-css" href="http://cppvillage.com/wp-content/plugins/qc-simple-link-directory/gutenberg/sld-block/dist/blocks.style.build.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bwg_fonts-css" href="http://cppvillage.com/wp-content/plugins/photo-gallery/css/bwg-fonts/fonts.css?ver=0.0.1" type="text/css" media="all"> 
+  <link rel="stylesheet" id="sumoselect-css" href="http://cppvillage.com/wp-content/plugins/photo-gallery/css/sumoselect.min.css?ver=3.0.3" type="text/css" media="all"> 
+  <link rel="stylesheet" id="mCustomScrollbar-css" href="http://cppvillage.com/wp-content/plugins/photo-gallery/css/jquery.mCustomScrollbar.min.css?ver=2.5.29" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bwg_googlefonts-css" href="https://fonts.googleapis.com/css?family=Ubuntu&amp;subset=greek,latin,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic" type="text/css" media="all"> 
+  <link rel="stylesheet" id="bwg_frontend-css" href="http://cppvillage.com/wp-content/plugins/photo-gallery/css/styles.min.css?ver=2.5.29" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tf-compiled-options-ect-css" href="http://cppvillage.com/wp-content/uploads/titan-framework-ect-css.css?ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tf-google-webfont-monda-css" href="//fonts.googleapis.com/css?family=Monda%3A500%2C400&amp;subset=latin%2Clatin-ext&amp;ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="tf-google-webfont-open-sans-css" href="//fonts.googleapis.com/css?family=Open+Sans%3Ainherit%2Cinherititalic%2C400&amp;subset=latin%2Clatin-ext&amp;ver=5.2.7" type="text/css" media="all"> 
+  <link rel="stylesheet" id="wm-fonticons-css" href="http://mktcppfoundation-001-site14.itempurl.com/wp-content/themes/icelander/assets/fonts/fontello/fontello.css?ver=1.5.8" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="genericons-neue-css" href="http://cppvillage.com/wp-content/themes/icelander/assets/fonts/genericons-neue/genericons-neue.css?ver=1.5.2" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="icelander-stylesheet-main-css" href="http://cppvillage.com/wp-content/themes/icelander/assets/css/main.css?ver=1.5.2" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="icelander-stylesheet-shortcodes-css" href="http://cppvillage.com/wp-content/themes/icelander/assets/css/shortcodes.css?ver=1.5.2" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="icelander-stylesheet-custom-css" href="http://cppvillage.com/wp-content/themes/icelander/assets/css/custom-styles.css?ver=1.5.2" type="text/css" media="screen"> 
+  <link rel="stylesheet" id="icelander-stylesheet-print-css" href="http://cppvillage.com/wp-content/themes/icelander/assets/css/print.css?ver=1.5.2" type="text/css" media="print"> 
+  <style id="icelander-inline-css" type="text/css">
+/* START CSS variables */
+:root { 
+--color_accent: #003b74; --color_header_background: #ffffff; --color_header_text--a20: rgba(0,0,0,0.2); --color_header_text: #000000; --color_header_headings: #000000; --color_header_widgets_background: #003b74; --color_header_widgets_text--a20: rgba(255,255,255,0.2); --color_header_widgets_text: #ffffff; --color_intro_background: #003161; --color_intro_text--a20: rgba(255,255,255,0.2); --color_intro_text: #ffffff; --color_intro_headings: #ffffff; --color_intro_widgets_background: #003161; --color_intro_widgets_text--a20: rgba(255,255,255,0.2); --color_intro_widgets_text: #ffffff; --color_intro_widgets_headings: #ffffff; --color_content_background: #ffffff; --color_content_text--a20: rgba(0,0,0,0.2); --color_content_text: #000000; --color_content_headings: #003b74; --color_footer_background: #000000; --color_footer_text--a20: rgba(255,252,252,0.2); --color_footer_text: #fffcfc; --color_footer_headings: #ffffff; --footer_image_repeat: no-repeat; --color_footer_secondary_background: #000000; --color_footer_secondary_text--a20: rgba(255,255,255,0.2); --color_footer_secondary_text: #ffffff; --layout_width_content: 1620px; --typography_size_html: 20px;
+}
+/* END CSS variables */
+.site-footer:not(.is-customize-preview)::before { display: none; }
+.intro-special { background-image: url('http://mktcppfoundation-001-site14.itempurl.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01.jpg'); }
+</style> 
+  <link rel="stylesheet" id="icelander-stylesheet-css" href="http://cppvillage.com/wp-content/themes/icelander-child/style.css?ver=1.5.2.1558647626" type="text/css" media="all"> 
+  <link rel="stylesheet" id="fl-builder-layout-141-css" href="http://cppvillage.com/wp-content/uploads/bb-plugin/cache/141-layout.css?ver=0a4d84c8206e7c2c7447002e5b133896" type="text/css" media="screen"> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js?ver=1.16.1"></script> 
+  <script type="text/javascript">
+window.onload = function() {
+	cssVars( {
+		onlyVars: true,
+		exclude: 'link:not([href^="http://cppvillage.com/wp-content/themes"])'
+	} );
+};
+</script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/photo-gallery/js/jquery.sumoselect.min.js?ver=3.0.3"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/photo-gallery/js/jquery.mobile.min.js?ver=1.3.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/photo-gallery/js/jquery.mCustomScrollbar.concat.min.js?ver=2.5.29"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/photo-gallery/js/jquery.fullscreen-0.4.1.min.js?ver=0.4.1"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var bwg_objectsL10n = {"bwg_field_required":"field is required.","bwg_mail_validation":"This is not a valid email address.","bwg_search_result":"There are no images matching your search.","bwg_select_tag":"Select Tag","bwg_order_by":"Order By","bwg_search":"Search","bwg_show_ecommerce":"Show Ecommerce","bwg_hide_ecommerce":"Hide Ecommerce","bwg_show_comments":"Show Comments","bwg_hide_comments":"Hide Comments","bwg_restore":"Restore","bwg_maximize":"Maximize","bwg_fullscreen":"Fullscreen","bwg_exit_fullscreen":"Exit Fullscreen","bwg_search_tag":"SEARCH...","bwg_tag_no_match":"No tags found","bwg_all_tags_selected":"All tags selected","bwg_tags_selected":"tags selected","play":"Play","pause":"Pause","is_pro":"1","bwg_play":"Play","bwg_pause":"Pause","bwg_hide_info":"Hide info","bwg_show_info":"Show info","bwg_hide_rating":"Hide rating","bwg_show_rating":"Show rating","ok":"Ok","cancel":"Cancel","select_all":"Select all","lazy_load":"0","lazy_loader":"http:\/\/cppvillage.com\/wp-content\/plugins\/photo-gallery\/images\/ajax_loader.png","front_ajax":"0"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/photo-gallery/js/scripts.min.js?ver=2.5.29"></script> 
+  <link rel="https://api.w.org/" href="http://cppvillage.com/wp-json/"> 
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://cppvillage.com/xmlrpc.php?rsd"> 
+  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cppvillage.com/wp-includes/wlwmanifest.xml"> 
+  <meta name="generator" content="WordPress 5.2.7"> 
+  <link rel="canonical" href="http://cppvillage.com/"> 
+  <link rel="shortlink" href="http://cppvillage.com/"> 
+  <link rel="alternate" type="application/json+oembed" href="http://cppvillage.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcppvillage.com%2F"> 
+  <link rel="alternate" type="text/xml+oembed" href="http://cppvillage.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fcppvillage.com%2F&amp;format=xml"> 
+  <script type="text/javascript">
+           var ajaxurl = "http://cppvillage.com/wp-admin/admin-ajax.php";
+         </script>
+  <script type="text/javascript">
+	           var ajaxurl = "http://cppvillage.com/wp-admin/admin-ajax.php";
+	         </script>
+  <meta name="tec-api-version" content="v1">
+  <meta name="tec-api-origin" content="http://cppvillage.com">
+  <link rel="https://theeventscalendar.com/" href="http://cppvillage.com/wp-json/tribe/events/v1/">
+  <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #0a0a0a; }
+</style> 
+  <style type="text/css" id="wp-custom-css">
+			.skip-link,
+.skip-link:link,
+.skip-link:hover,
+.skip-link:active ,
+.skip-link:focus,
+.skip-link:visited
+{background:#000; background-color:#000; color:#fff;}
+
+footer.entry-meta{display:none;}
+
+.post-thumbnail{ text-align:center; padding-top:20px;}
+
+/* add css below this line  */
+
+
+/*instagram popup accessibility issue */
+
+.instashow-gallery-media-info{visibility:hidden;}
+.instashow-gallery-media-info-description{display:none;}
+
+.instashow-gallery-media-info-description{color:#fff; background-color:#000;background:#000;}
+
+.ect-events-read-more{display:none;}
+
+/*h3.entry-title.h1.intro-title{visibility:hidden;}*/
+
+
+
+/*Featured Calendar Font Color Change */
+.ect-list-post.ect-featured-event h2.ect-list-title a.ect-event-url {color:#00465e;}
+
+/*Featured Calendar Side bar color change */
+.ect-list-post.style-1.ect-featured-event .ect-list-post-left .ect-list-date{background:#E1F1CF;
+box-shadow: inset 0px 0px 0px 0px #ea7514;
+}
+.ect-list-post.ect-featured-event.style-1 .ect-list-post-right .ect-list-venue{
+	background:#E1F1CF;
+}
+.ect-list-post.ect-featured-event.style-1 .ect-list-post-right .ect-list-venue{
+	box-shadow: inset 0px 0px 0px 0px #ee8b38;
+}
+
+.posts .entry {border: 0px solid transparent;}/*removes lines from posts on homepage*/
+
+/*#article.entry-content{margin-top:-75px;}*/
+
+.entry-meta{margin-top:-2.5em} 
+
+/*use for the accessibility label control error*/
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+
+
+/*use for the accessibility changes colors in category breadcrumb links*/
+#eckb-categories-archive-container .eckb-category-archive-defaults a{color:#003b74}
+
+
+#eckb-categories-archive-container .eckb-category-archive-style-2 .eckb-category-archive-main .eckb-article-container .eckb-article-body .eckb-article-read-more{color:#003b74}
+
+/*use for the accessibility changes colors in category breadcrumb links*/
+
+/* fix for knowledge base top margin issue */
+.site-content-inner{padding:2em;}
+
+/*Removes instagram widget profile picture for accessibility*/
+.sbi_header_img{
+	display:none;
+}
+.sbi_header_img_hover{
+	display:none;
+}
+
+#sb_instagram .sb_instagram_header .sbi_header_text .sbi_bio, #sb_instagram .sb_instagram_header .sbi_header_text h3 {
+	margin:0 0 0 0px!important;
+}		</style> 
+ </head> 
+ <body class="custom-background fl-builder footer-layout-boxed group-blog has-intro has-navigation-mobile has-sticky-header header-layout-fullwidth home is-singular no-js no-widgets-sidebar page page-id-141 page-layout-outdented page-template-default site-layout-fullwidth site-title-hidden tribe-bar-is-disabled tribe-no-js wp-custom-logo"> 
+  <ul class="skip-link-list"> 
+   <li class="skip-link-list-item"><a class="skip-link screen-reader-text" href="#site-navigation">Skip to main navigation</a></li>
+   <li class="skip-link-list-item"><a class="skip-link screen-reader-text" href="#content">Skip to main content</a></li>
+   <li class="skip-link-list-item"><a class="skip-link screen-reader-text" href="#colophon">Skip to footer</a></li>
+  </ul> 
+  <div id="page" class="site"> 
+   <header id="masthead" class="site-header"> 
+    <div class="site-header-content">
+     <div class="site-header-inner"> 
+      <div class="site-branding"> <a href="http://cppvillage.com/" class="custom-logo-link" rel="home"><img width="470" height="50" src="http://cppvillage.com/wp-content/uploads/2018/08/University-Village-Logo-horizontal2-01-50x470.jpg" class="custom-logo" alt="University Logo" srcset="http://cppvillage.com/wp-content/uploads/2018/08/University-Village-Logo-horizontal2-01-50x470.jpg 470w, http://cppvillage.com/wp-content/uploads/2018/08/University-Village-Logo-horizontal2-01-50x470-300x32.jpg 300w" sizes="(max-width: 470px) 100vw, 470px"></a> 
+       <div class="site-branding-text"> 
+        <h1 class="site-title site-title-text">University Village</h1> 
+       </div> 
+      </div> 
+      <nav id="site-navigation" class="main-navigation" aria-label="Primary Menu"> <button id="menu-toggle" class="menu-toggle" aria-controls="menu-primary" aria-expanded="false">Menu</button> 
+       <div id="site-navigation-container" class="main-navigation-container"> 
+        <div class="mobile-search-form">
+         <form role="search" method="get" class="search-form" action="http://cppvillage.com/"> <label> <span class="screen-reader-text">Search for:</span> <input type="search" class="search-field" placeholder="Search …" value="" name="s"> </label> 
+          <input type="submit" class="search-submit" value="Search"> 
+         </form>
+        </div>
+        <div class="menu">
+         <ul id="menu-primary" class="menu-primary">
+          <li id="menu-item-6845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6845"><a>ABOUT US <span class="expander" aria-label="(Focus the link to toggle submenu.)"></span></a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-7457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7457"><a href="http://cppvillage.com/apartment-information/">Apartment Information</a></li> 
+            <li id="menu-item-7236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7236"><a href="http://cppvillage.com/conferencing/">Conferencing</a></li> 
+            <li id="menu-item-6843" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6843"><a href="http://cppvillage.com/map/">Map and Directions</a></li> 
+            <li id="menu-item-7448" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7448"><a href="https://www.cpp.edu/~smokefree/index.shtml">Smoke &amp; Tobacco Free Campus</a></li> 
+           </ul> </li> 
+          <li id="menu-item-7161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7161"><a href="http://cppvillage.com/calendar/">CALENDAR</a></li> 
+          <li id="menu-item-6827" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6827"><a>NEW APPLICANTS <span class="expander" aria-label="(Focus the link to toggle submenu.)"></span></a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-6829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6829"><a href="http://cppvillage.com/eligibility-requirements/">Eligibility Requirements</a></li> 
+            <li id="menu-item-6828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6828"><a href="http://cppvillage.com/apply-online/">Apply Online</a></li> 
+            <li id="menu-item-6830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6830"><a href="http://cppvillage.com/forms-and-documents/">Forms, Documents, Policies – New Applicants</a></li> 
+           </ul> </li> 
+          <li id="menu-item-6815" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6815"><a>CURRENT RESIDENTS <span class="expander" aria-label="(Focus the link to toggle submenu.)"></span></a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-6820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6820"><a href="http://cppvillage.com/forms-and-documents-residents/">Forms, Documents, Policies – Residents</a></li> 
+            <li id="menu-item-6823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6823"><a href="http://cppvillage.com/residential-education/">Residential Education</a></li> 
+            <li id="menu-item-6824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6824"><a href="http://cppvillage.com/residential-operations/">Residential Operations</a></li> 
+            <li id="menu-item-6826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6826"><a href="http://cppvillage.com/student-leader-selection/">Student Leader Selection</a></li> 
+            <li id="menu-item-6822" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6822"><a href="http://cppvillage.com/residential-advisors-availability/">Residential Advisors Availability</a></li> 
+            <li id="menu-item-6884" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6884"><a href="http://cppvillage.com/resident-parking-information/">Resident Parking Information</a></li> 
+           </ul> </li> 
+          <li id="menu-item-7437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7437"><a href="http://cppvillage.com/knowledge-base/">HELP &amp; FAQs</a></li> 
+          <li id="menu-item-6837" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6837"><a>ONLINE SERVICES <span class="expander" aria-label="(Focus the link to toggle submenu.)"></span></a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-6840" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6840"><a href="http://cppvillage.com/online-portal-information-starez/">Online Portal Information</a></li> 
+            <li id="menu-item-6838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6838"><a href="http://cppvillage.com/it-workorder/">IT Workorder</a></li> 
+            <li id="menu-item-6839" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6839"><a href="http://cppvillage.com/maintenance-work-order/">Maintenance Work Order</a></li> 
+           </ul> </li> 
+          <li id="menu-item-7660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7660"><a href="http://cppvillage.com/news/">NEWS</a></li> 
+          <li id="menu-item-6841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6841"><a>CONTACT <span class="expander" aria-label="(Focus the link to toggle submenu.)"></span></a> 
+           <ul class="sub-menu"> 
+            <li id="menu-item-6936" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6936"><a href="http://cppvillage.com/staff-directory/">Staff Directory</a></li> 
+            <li id="menu-item-6842" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6842"><a href="http://cppvillage.com/contact-form/">Contact Form</a></li> 
+            <li id="menu-item-7233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7233"><a href="http://cppvillage.com/university-village-hours/">University Village Hours</a></li> 
+            <li id="menu-item-7672" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7672"><a href="http://cppvillage.com/knowledge-base/visitor-parking-and-police/">Visitor Parking and Police</a></li> 
+            <li id="menu-item-6832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6832"><a href="http://cppvillage.com/employment/">Employment</a></li> 
+           </ul> </li> 
+          <li class="menu-toggle-skip-link-container"><a href="#menu-toggle" class="menu-toggle-skip-link">Skip to menu toggle button</a></li>
+         </ul>
+        </div> 
+       </div> 
+      </nav> 
+     </div>
+    </div> 
+   </header> 
+   <div id="content" class="site-content"> 
+    <section id="intro-container" class="entry-header intro-container"> 
+     <div class="intro-special"> 
+      <div id="intro-media" class="intro-media"> 
+       <div id="wp-custom-header" class="wp-custom-header">
+        <img src="http://mktcppfoundation-001-site14.itempurl.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01.jpg" width="1921" height="481" alt="University Village" srcset="http://cppvillage.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01.jpg 1921w, http://cppvillage.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01-300x75.jpg 300w, http://cppvillage.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01-768x192.jpg 768w, http://cppvillage.com/wp-content/uploads/2018/08/welcome-banners-group-2018-05-01-1024x256.jpg 1024w" sizes="(max-width: 1921px) 100vw, 1921px">
+       </div>
+      </div> 
+      <div id="intro" class="intro">
+       <div class="intro-inner"> 
+        <h1 class="page-title h1 intro-title">Live At The Village</h1> 
+       </div>
+      </div> 
+     </div> 
+    </section> 
+    <div class="site-content-inner"> 
+     <div id="primary" class="content-area"> 
+      <main id="main" class="site-main"> 
+       <article id="post-141" class="post-141 page type-page status-publish hentry entry"> 
+        <div class="entry-content">
+         <div class="fl-builder-content fl-builder-content-141 fl-builder-content-primary" data-post-id="141">
+          <div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-5b88b3afd3409 hide-more-button fl-row-layout-fixed-fixed vertical-align-top" data-node="5b88b3afd3409"> 
+           <div class="fl-row-content-wrap"> 
+            <div class="fl-row-content fl-row-fixed-width fl-node-content"> 
+             <div class="fl-col-group fl-node-5b88b3afd8888" data-node="5b88b3afd8888"> 
+              <div class="fl-col fl-node-5b88b3afd8945 fl-col-has-cols" data-node="5b88b3afd8945"> 
+               <div class="fl-col-content fl-node-content"> 
+                <div class="fl-module fl-module-wm_message fl-node-5e72aed4a481c" data-node="5e72aed4a481c"> 
+                 <div class="fl-module-content fl-node-content"> 
+                  <div class="wm-message color-success">
+                   <h3 class="wm-message-title wm-message-element">University Village Fall 2020 Housing FAQ’s</h3>
+                   <div class="wm-message-content wm-message-element">
+                    <p>Please visit our knowledge base for the lastest <strong style="background-color: var(--color_content_background); color: var(--color_content_text); font-family: var(--typography_fonts_text);"><a href="http://cppvillage.com/knowledge-base/category/fall-2020-housing-faq/">University Village Fall 2020 Housing FAQ’s</a></strong></p>
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="fl-module fl-module-wm_message fl-node-5f12337c1510d" data-node="5f12337c1510d"> 
+                 <div class="fl-module-content fl-node-content"> 
+                  <div class="wm-message color-warning">
+                   <h3 class="wm-message-title wm-message-element">COVID-19 Frequently Asked Questions</h3>
+                   <div class="wm-message-content wm-message-element">
+                    <p>Residents, check out the <a href="http://cppvillage.com/knowledge-base/covid-19-frequently-asked-questions/">COVID-19 FAQ</a> page to see how to respond to the evolving situation regarding the virus and your residency at the University Village.</p>
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="fl-module fl-module-wm_posts fl-node-5d8d4181f3d12 font-size-m masonry box-shadow-small" data-node="5d8d4181f3d12"> 
+                 <div class="fl-module-content fl-node-content"> 
+                  <div class="wm-posts wm-posts-wrap clearfix wm-posts-post font-size-m wm-posts-masonry-enabled box-shadow-small  wm-posts-layout-default posts">
+                   <div class="wm-posts-container wm-items-container with-margin masonry-this" data-columns="4" data-time="0" data-layout-mode="masonry"> 
+                    <div class="wm-posts-item wm-posts-item-8129 wm-column width-1-4 with-margin has-thumbnail"> 
+                     <article id="post-8129" class="post-8129 post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-uncategorized entry"> 
+                      <div class="entry-media">
+                       <figure class="post-thumbnail">
+                        <a href="http://cppvillage.com/applications-for-new-residents-open-on-april-10th-at-9-am/"><img width="768" height="512" src="http://cppvillage.com/wp-content/uploads/2020/04/checklist-768x512.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="a clipboard with boxes checked off and a pen" srcset="http://cppvillage.com/wp-content/uploads/2020/04/checklist-768x512.jpg 768w, http://cppvillage.com/wp-content/uploads/2020/04/checklist-400x267.jpg 400w, http://cppvillage.com/wp-content/uploads/2020/04/checklist-750x500.jpg 750w, http://cppvillage.com/wp-content/uploads/2020/04/checklist.jpg 910w" sizes="(max-width: 768px) 100vw, 768px"></a>
+                       </figure>
+                      </div>
+                      <header class="entry-header">
+                       <h2 class="entry-title"><a href="http://cppvillage.com/applications-for-new-residents-open-on-april-10th-at-9-am/" rel="bookmark">Applications for new residents open on April 10th at 9 AM!</a></h2>
+                      </header> 
+                      <footer class="entry-meta"> <span class="entry-meta-element entry-date posted-on"> <span class="entry-meta-description label-published"> Posted on: </span> <a href="http://cppvillage.com/applications-for-new-residents-open-on-april-10th-at-9-am/" rel="bookmark"> <time datetime="2020-04-09T14:58:46-07:00" class="published" title="Posted on: April 9, 2020"> April 9, 2020 </time> </a> <span class="entry-meta-description label-updated"> Last updated on: </span> <time class="updated" datetime="2020-07-08T11:25:22-07:00" title="Last updated on: July 8, 2020"> July 8, 2020 </time> </span> <span class="entry-meta-element byline author vcard"> <span class="entry-meta-description"> Written by: </span> <a href="http://cppvillage.com/author/cppvillage/" class="url fn n" rel="author"> Micah </a> </span> 
+                      </footer> 
+                      <div class="entry-content">
+                       <div class="entry-summary">
+                         When does registration start? New applicant Academic Year application will be available on April 10th at 9 am (You will apply online) &nbsp;What do I need to apply? Student ID number Frequently checked email address Permanent physical address $50 application… 
+                       </div> 
+                       <div class="link-more">
+                        <a href="http://cppvillage.com/applications-for-new-residents-open-on-april-10th-at-9-am/" class="more-link">Continue reading<span class="screen-reader-text"> “Applications for new residents open on April 10th at 9 AM!”</span>…</a>
+                       </div> 
+                      </div> 
+                     </article> 
+                    </div> 
+                    <div class="wm-posts-item wm-posts-item-7911 wm-column width-1-4 with-margin alt has-thumbnail"> 
+                     <article id="post-7911" class="post-7911 post type-post status-publish format-standard has-post-thumbnail hentry category-featured entry"> 
+                      <div class="entry-media">
+                       <figure class="post-thumbnail">
+                        <a href="http://cppvillage.com/overcoming-cultural-stigma-surrounding-counseling-by-lani-elliott/"><img width="768" height="624" src="http://cppvillage.com/wp-content/uploads/2020/02/Atran_Counsel1-1-768x624.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="Man who is entering a building with a sign that says &quot;counseling&quot; on it" srcset="http://cppvillage.com/wp-content/uploads/2020/02/Atran_Counsel1-1-768x624.jpg 768w, http://cppvillage.com/wp-content/uploads/2020/02/Atran_Counsel1-1-400x325.jpg 400w, http://cppvillage.com/wp-content/uploads/2020/02/Atran_Counsel1-1-615x500.jpg 615w, http://cppvillage.com/wp-content/uploads/2020/02/Atran_Counsel1-1-1536x1249.jpg 1536w" sizes="(max-width: 768px) 100vw, 768px"></a>
+                       </figure>
+                      </div>
+                      <header class="entry-header">
+                       <h2 class="entry-title"><a href="http://cppvillage.com/overcoming-cultural-stigma-surrounding-counseling-by-lani-elliott/" rel="bookmark">Overcoming Cultural Stigma Surrounding Counseling by Lani Elliott</a></h2>
+                      </header> 
+                      <footer class="entry-meta"> <span class="entry-meta-element entry-date posted-on"> <span class="entry-meta-description label-published"> Posted on: </span> <a href="http://cppvillage.com/overcoming-cultural-stigma-surrounding-counseling-by-lani-elliott/" rel="bookmark"> <time datetime="2020-02-05T15:14:41-07:00" class="published" title="Posted on: February 5, 2020"> February 5, 2020 </time> </a> <span class="entry-meta-description label-updated"> Last updated on: </span> <time class="updated" datetime="2020-02-11T10:23:31-07:00" title="Last updated on: February 11, 2020"> February 11, 2020 </time> </span> <span class="entry-meta-element byline author vcard"> <span class="entry-meta-description"> Written by: </span> <a href="http://cppvillage.com/author/cppvillage/" class="url fn n" rel="author"> Micah </a> </span> 
+                      </footer> 
+                      <div class="entry-content">
+                       <div class="entry-summary">
+                         Counseling is a useful tool that can help people develop coping skills and process emotions and feelings. But for some, the negative stigma that surrounds therapy sessions is a major deterrent to seeking help. Despite a growing awareness of the… 
+                       </div> 
+                       <div class="link-more">
+                        <a href="http://cppvillage.com/overcoming-cultural-stigma-surrounding-counseling-by-lani-elliott/" class="more-link">Continue reading<span class="screen-reader-text"> “Overcoming Cultural Stigma Surrounding Counseling by Lani Elliott”</span>…</a>
+                       </div> 
+                      </div> 
+                     </article> 
+                    </div> 
+                    <div class="wm-posts-item wm-posts-item-7908 wm-column width-1-4 with-margin has-thumbnail"> 
+                     <article id="post-7908" class="post-7908 post type-post status-publish format-standard has-post-thumbnail hentry category-featured entry"> 
+                      <div class="entry-media">
+                       <figure class="post-thumbnail">
+                        <a href="http://cppvillage.com/tips-on-how-to-de-stress-by-mandana-jahangirian/"><img width="768" height="448" src="http://cppvillage.com/wp-content/uploads/2020/02/Event_20190514_LifeHackSeriesDeStress_Hero-768x448.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="A red ballon being popped with stress written on it" srcset="http://cppvillage.com/wp-content/uploads/2020/02/Event_20190514_LifeHackSeriesDeStress_Hero-768x448.jpg 768w, http://cppvillage.com/wp-content/uploads/2020/02/Event_20190514_LifeHackSeriesDeStress_Hero-400x233.jpg 400w, http://cppvillage.com/wp-content/uploads/2020/02/Event_20190514_LifeHackSeriesDeStress_Hero-857x500.jpg 857w, http://cppvillage.com/wp-content/uploads/2020/02/Event_20190514_LifeHackSeriesDeStress_Hero.jpg 1220w" sizes="(max-width: 768px) 100vw, 768px"></a>
+                       </figure>
+                      </div>
+                      <header class="entry-header">
+                       <h2 class="entry-title"><a href="http://cppvillage.com/tips-on-how-to-de-stress-by-mandana-jahangirian/" rel="bookmark">Tips on how to de-stress by Mandana Jahangirian</a></h2>
+                      </header> 
+                      <footer class="entry-meta"> <span class="entry-meta-element entry-date posted-on"> <span class="entry-meta-description label-published"> Posted on: </span> <a href="http://cppvillage.com/tips-on-how-to-de-stress-by-mandana-jahangirian/" rel="bookmark"> <time datetime="2020-02-04T14:15:28-07:00" class="published" title="Posted on: February 4, 2020"> February 4, 2020 </time> </a> <span class="entry-meta-description label-updated"> Last updated on: </span> <time class="updated" datetime="2020-02-04T14:15:28-07:00" title="Last updated on: February 4, 2020"> February 4, 2020 </time> </span> <span class="entry-meta-element byline author vcard"> <span class="entry-meta-description"> Written by: </span> <a href="http://cppvillage.com/author/cppvillage/" class="url fn n" rel="author"> Micah </a> </span> 
+                      </footer> 
+                      <div class="entry-content">
+                       <div class="entry-summary">
+                         We understand it all too well- the adrenaline rushing, your heart racing, the headaches, emotional changes, and the feeling of exhaustion and frustration. You are stressed and with every passing moment, it may seem impossible to handle. But do not… 
+                       </div> 
+                       <div class="link-more">
+                        <a href="http://cppvillage.com/tips-on-how-to-de-stress-by-mandana-jahangirian/" class="more-link">Continue reading<span class="screen-reader-text"> “Tips on how to de-stress by Mandana Jahangirian”</span>…</a>
+                       </div> 
+                      </div> 
+                     </article> 
+                    </div> 
+                    <div class="wm-posts-item wm-posts-item-7896 wm-column width-1-4 with-margin alt has-thumbnail"> 
+                     <article id="post-7896" class="post-7896 post type-post status-publish format-standard has-post-thumbnail hentry category-featured entry"> 
+                      <div class="entry-media">
+                       <figure class="post-thumbnail">
+                        <a href="http://cppvillage.com/meet-the-managerial-assistants/"><img width="768" height="512" src="http://cppvillage.com/wp-content/uploads/2020/01/1-768x512.jpg" class="attachment-medium_large size-medium_large wp-post-image" alt="Group photograph of Lupe, Erika, Daniel, Adam and Trent" srcset="http://cppvillage.com/wp-content/uploads/2020/01/1-768x512.jpg 768w, http://cppvillage.com/wp-content/uploads/2020/01/1-400x267.jpg 400w, http://cppvillage.com/wp-content/uploads/2020/01/1-750x500.jpg 750w, http://cppvillage.com/wp-content/uploads/2020/01/1.jpg 1280w" sizes="(max-width: 768px) 100vw, 768px"></a>
+                       </figure>
+                      </div>
+                      <header class="entry-header">
+                       <h2 class="entry-title"><a href="http://cppvillage.com/meet-the-managerial-assistants/" rel="bookmark">Meet the Managerial Assistants!</a></h2>
+                      </header> 
+                      <footer class="entry-meta"> <span class="entry-meta-element entry-date posted-on"> <span class="entry-meta-description label-published"> Posted on: </span> <a href="http://cppvillage.com/meet-the-managerial-assistants/" rel="bookmark"> <time datetime="2020-01-28T09:58:37-07:00" class="published" title="Posted on: January 28, 2020"> January 28, 2020 </time> </a> <span class="entry-meta-description label-updated"> Last updated on: </span> <time class="updated" datetime="2020-03-10T12:04:02-07:00" title="Last updated on: March 10, 2020"> March 10, 2020 </time> </span> <span class="entry-meta-element byline author vcard"> <span class="entry-meta-description"> Written by: </span> <a href="http://cppvillage.com/author/cppvillage/" class="url fn n" rel="author"> Micah </a> </span> 
+                      </footer> 
+                      <div class="entry-content">
+                       <div class="entry-summary">
+                         Lupe Tuitavake: Hello, my name is Lupe Tuitavake and I am a third year transfer student majoring in Urban Planning with an emphasis in Urban Design. I work at University Village as a Managerial Assistant. Two of my favorite hobbies… 
+                       </div> 
+                       <div class="link-more">
+                        <a href="http://cppvillage.com/meet-the-managerial-assistants/" class="more-link">Continue reading<span class="screen-reader-text"> “Meet the Managerial Assistants!”</span>…</a>
+                       </div> 
+                      </div> 
+                     </article> 
+                    </div> 
+                   </div>
+                  </div> 
+                 </div> 
+                </div> 
+                <div class="fl-col-group fl-node-5d79d3a57e358 fl-col-group-nested" data-node="5d79d3a57e358"> 
+                 <div class="fl-col fl-node-5d79d3a57e5d6 fl-col-small" data-node="5d79d3a57e5d6"> 
+                  <div class="fl-col-content fl-node-content"> 
+                   <div class="fl-module fl-module-photo fl-node-5d8d3f9030cf9" data-node="5d8d3f9030cf9"> 
+                    <div class="fl-module-content fl-node-content"> 
+                     <div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject"> 
+                      <div class="fl-photo-content fl-photo-img-jpg"> <a href="http://cppvillage.com/eligibility-requirements/" target="_self" itemprop="url"> <img class="fl-photo-img wp-image-7624 size-full" src="http://cppvillage.com/wp-content/uploads/2019/09/webbanner-apply-now-01.jpg" alt="webbanner-apply-now-01" itemprop="image" height="200" width="900" title="webbanner-apply-now-01" srcset="http://cppvillage.com/wp-content/uploads/2019/09/webbanner-apply-now-01.jpg 900w, http://cppvillage.com/wp-content/uploads/2019/09/webbanner-apply-now-01-300x67.jpg 300w, http://cppvillage.com/wp-content/uploads/2019/09/webbanner-apply-now-01-768x171.jpg 768w" sizes="(max-width: 900px) 100vw, 900px"> </a> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                   <div class="fl-module fl-module-photo fl-node-5d8d3fb411982" data-node="5d8d3fb411982"> 
+                    <div class="fl-module-content fl-node-content"> 
+                     <div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject"> 
+                      <div class="fl-photo-content fl-photo-img-jpg"> 
+                       <img class="fl-photo-img wp-image-7623" src="http://mktcppfoundation-001-site14.itempurl.com/wp-content/uploads/2019/09/banner-Housing-sustainability-01-01.jpg" alt="banner-Housing-sustainability-01-01" itemprop="image" title="banner-Housing-sustainability-01-01" srcset="http://cppvillage.com/wp-content/uploads/2019/09/banner-Housing-sustainability-01-01.jpg 900w, http://cppvillage.com/wp-content/uploads/2019/09/banner-Housing-sustainability-01-01-300x67.jpg 300w, http://cppvillage.com/wp-content/uploads/2019/09/banner-Housing-sustainability-01-01-768x171.jpg 768w" sizes="(max-width: 900px) 100vw, 900px"> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                   <div class="fl-module fl-module-photo fl-node-5d8d405f3acc0" data-node="5d8d405f3acc0"> 
+                    <div class="fl-module-content fl-node-content"> 
+                     <div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject"> 
+                      <div class="fl-photo-content fl-photo-img-jpg"> <a href="http://cppvillage.com/knowledge-base/" target="_self" itemprop="url"> <img class="fl-photo-img wp-image-7626 size-full" src="http://cppvillage.com/wp-content/uploads/2019/09/webbanners-knowledgebase-01.jpg" alt="webbanners-knowledgebase-01" itemprop="image" height="200" width="900" title="webbanners-knowledgebase-01" srcset="http://cppvillage.com/wp-content/uploads/2019/09/webbanners-knowledgebase-01.jpg 900w, http://cppvillage.com/wp-content/uploads/2019/09/webbanners-knowledgebase-01-300x67.jpg 300w, http://cppvillage.com/wp-content/uploads/2019/09/webbanners-knowledgebase-01-768x171.jpg 768w" sizes="(max-width: 900px) 100vw, 900px"> </a> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                   <div class="fl-module fl-module-photo fl-node-5e56dbc71a503" data-node="5e56dbc71a503"> 
+                    <div class="fl-module-content fl-node-content"> 
+                     <div class="fl-photo fl-photo-align-center" itemscope itemtype="https://schema.org/ImageObject"> 
+                      <div class="fl-photo-content fl-photo-img-png"> <a href="http://centerpointedining.com" target="_self" itemprop="url"> <img class="fl-photo-img wp-image-7997 size-full" src="http://mktcppfoundation-001-site14.itempurl.com/wp-content/uploads/2020/02/Centerpointe-Banner.png" alt="Centerpointe Dining Commons Banner" itemprop="image" height="200" width="900" title="Centerpointe Banner"> </a> 
+                      </div> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                 <div class="fl-col fl-node-5d79d3a57e622 fl-col-small" data-node="5d79d3a57e622"> 
+                  <div class="fl-col-content fl-node-content"> 
+                   <div class="fl-module fl-module-rich-text fl-node-5d3625898eafd" data-node="5d3625898eafd"> 
+                    <div class="fl-module-content fl-node-content"> 
+                     <div class="fl-rich-text"> 
+                      <h2>Upcoming Events</h2> 
+                      <p><!--=========list Template 2.0=========--></p>
+                      <div id="ect-events-list-content" class="ectt-list-wrapper">
+                       <div id="list-wrp" class="ect-list-wrapper residential-education"></div>
+                      </div>
+                      <div class="ect-no-events">
+                       <p>There are no upcoming events at this time.</p>
+                      </div>
+                      <p></p> 
+                     </div> 
+                    </div> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div>
+        </div> <a class="skip-link screen-reader-text focus-position-static" href="#site-navigation">Skip back to main navigation</a> 
+       </article> 
+      </main><!-- /#main --> 
+     </div><!-- /#primary --> 
+    </div><!-- /.site-content-inner --> 
+   </div><!-- /#content --> 
+   <footer id="colophon" class="site-footer"> 
+    <div class="site-footer-area footer-area-footer-widgets"> 
+     <div class="footer-widgets-inner site-footer-area-inner"> 
+      <aside id="footer-widgets" class="widget-area footer-widgets" aria-label="Footer widgets"> 
+       <section id="custom_html-5" class="widget_text widget widget_custom_html">
+        <h2 class="widget-title">University Village</h2>
+        <div class="textwidget custom-html-widget">
+         <p>Office Hours: <br> Monday—Friday <br> 8:00AM–5:00PM</p> 
+         <p> <a href="http://cppvillage.com/university-village-hours/" title="View more Village Hours">View more hours</a><br></p> 
+         <p>3400 Poly Vista,&nbsp;Building 300<br> Pomona, CA 91768</p> 
+         <p><a href="tel:909-869-4242">(909) 869-4242</a></p> 
+         <p> <i>RA On Duty</i><br> <a href="tel:909-762-8286">(909) 762-8286</a> </p> 
+        </div>
+       </section>
+       <section id="custom_html-2" class="widget_text widget widget_custom_html">
+        <h2 class="widget-title">Campus Safety</h2>
+        <div class="textwidget custom-html-widget">
+         <a href="https://www.cpp.edu/annual-security-report.shtml">Annual Security Report</a>
+         <br> <a href="https://www.cpp.edu/campus-safety-plan.shtml">Campus Safety Plan</a>
+         <br> <a aria-label="Cpp Safety and Emergency Info" href="https://www.cpp.edu/~safety/index.shtml" title="Cpp Safety and Emergency Info">Safety&nbsp;&amp; Emergency Info</a>
+         <br> <a aria-label="Fire Safety Report" href="http://bit.ly/2xsn1Fp" title="Fire Safety Report Info">Fire Safety Report</a>
+         <br> <a href="https://www.cpp.edu/~officeofequity/titleIX/index.shtml">Title IX</a>
+        </div>
+       </section>
+       <section id="custom_html-4" class="widget_text widget widget_custom_html">
+        <h2 class="widget-title">FOUNDATION SERVICES</h2>
+        <div class="textwidget custom-html-widget">
+         <a style="background-color: #000000; color:#ffffff;" aria-label="Cal Poly Pomona Foundation" href="https://www.foundation.cpp.edu" title="Cal Poly Pomona Foundation">CPP Foundation</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="http://www.broncochannel.com">Bronco Channel</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="http://www.broncobookstore.com">Bronco Bookstore</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="https://www.foundation.cpp.edu/dining/">Campus Dining</a>
+         <br> <a title="Foundation employment" style="background-color: #000000; color:#ffffff;" href="https://foundation.cpp.edu/es/employment.aspx">Foundation Jobs</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="http://www.ibrewworks.com/">Innovation Brew Works</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="http://www.kelloggwest.com">Kellogg West Hotel</a>
+         <br> <a style="background-color: #000000; color:#ffffff;" href="https://www.foundation.cpp.edu/broncobucks/">Bronco Bucks</a>
+         <br> 
+        </div>
+       </section>
+       <section id="custom_html-3" class="widget_text widget widget_custom_html">
+        <h2 class="widget-title">CAMPUS RESOURCES</h2>
+        <div class="textwidget custom-html-widget">
+         <a href="https://www.cpp.edu">Cal Poly Pomona</a>
+         <br> <a href="https://www.cpp.edu/~financial-aid/index.shtml">Financial Aid</a>
+         <br> <a href="https://www.cpp.edu/~admissions/index.shtml">Admissions</a>
+         <br> <a href="https://www.cpp.edu/~library/index.shtml">Library</a>
+         <br> <a href="https://apps.cpp.edu/bronco411/search/" title="bronco411">CPP Directory</a>
+         <br> <a href="https://www.cpp.edu/events/">CPP Calendar</a>
+         <br> <a href="https://polycentric.cpp.edu">Polycentric News</a>
+         <br> 
+        </div>
+       </section> 
+      </aside> 
+     </div> 
+    </div> 
+    <div class="site-footer-area footer-area-site-info"> 
+     <div class="site-footer-area-inner site-info-inner"> 
+      <div class="site-info">
+        © 2020 <a style="color:#fff;background-color:#111" title="University Village" href="http://cppvillage.com/">University Village</a> | <a style="color:#fff;background-color:#111" title="Support Our Campus" href="http://www.cppvillage.com/support-our-campus/">Support Our Campus</a> | <a style="color:#fff;background-color:#111" title="Privacy Policy" href="https://www.cpp.edu/privacy.shtml">Privacy</a> | <a style="color:#fff;background-color:#111" title="Accessibility" href="https://www.cpp.edu/accessibility.shtml">Accessibility</a> | <a style="color:#fff;background-color:#111" title="Document Viewers" href="http://cppvillage.com/file-viewers-2/">MS Office Viewers</a> | <a style="color:#fff;background-color:#111" title="Document Viewers" href="https://www.microsoft.com/en-us/p/doc-viewer/9n69kfjds28z?activetab=pivot:overviewtab">Word Viewer</a> | <a style="color:#fff;background-color:#111" title="Download Adobe PDF Reader" href="https://get.adobe.com/reader/">Download Adobe PDF Reader</a> | <a style="color:#fff;background-color:#111" href="mailto:alexhernandez@cpp.edu">Contact Webmaster</a>
+       <p></p> 
+      </div> 
+     </div> 
+    </div><!-- /footer-area-site-info --> 
+   </footer> 
+  </div><!-- /#page --> 
+  <script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script> <!-- Instagram Feed JS --> 
+  <script type="text/javascript">
+var sbiajaxurl = "http://cppvillage.com/wp-admin/admin-ajax.php";
+</script> 
+  <script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script>
+  <link rel="stylesheet" id="ect-common-styles-css" href="http://cppvillage.com/wp-content/plugins/the-events-calendar-templates-and-shortcode/css/ect-common-styles.css" type="text/css" media="all"> 
+  <link rel="stylesheet" id="ect-list-view-styles-css" href="http://cppvillage.com/wp-content/plugins/the-events-calendar-templates-and-shortcode/css/ect-list-view.css" type="text/css" media="all"> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/the-events-calendar/common/src/resources/js/tribe-common.min.js?ver=4.9.16"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/the-events-calendar/common/src/resources/js/tooltip.min.js?ver=4.9.16"></script> 
+  <script type="text/javascript">
+/* <![CDATA[ */
+var $icelanderBreakpoints = {"s":"448","m":"672","l":"880","xl":"1280","xxl":"1600","xxxl":"1920","xxxxl":"2560"};
+/* ]]> */
+</script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/assets/js/skip-link-focus-fix.js?ver=1.5.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/assets/js/scripts-navigation-accessibility.js?ver=1.5.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/assets/js/scripts-navigation-mobile.js?ver=1.5.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/assets/js/vendors/scroll-watch/jquery.scroll-watch.js?ver=1.5.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/beaver-builder-lite-version/js/jquery.fitvids.min.js?ver=1.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/themes/icelander/assets/js/scripts-global.js?ver=1.5.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/uploads/bb-plugin/cache/141-layout.js?ver=0a4d84c8206e7c2c7447002e5b133896"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/wp-embed.min.js?ver=5.2.7"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/imagesloaded.min.js?ver=5.2.7"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/masonry.min.js?ver=3.3.2"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/webman-amplifier/assets/js/shortcode-posts-masonry.js?ver=1.5.8"></script> 
+  <script type="text/javascript" src="http://cppvillage.com/wp-content/plugins/the-events-calendar-templates-and-shortcode/js/ect.js"></script>  
+ </body>
+</html>

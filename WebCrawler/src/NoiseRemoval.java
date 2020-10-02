@@ -28,20 +28,20 @@ import org.jsoup.select.NodeVisitor;
 public class NoiseRemoval {
 	private int initialSize = 0;
 	private int finalSize = 0;
-	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script", 
-									"style", "a", "link", "footer", "object", "figure", "track",
-									"noscript", "form"};
+	private String[] basicTags = {"audio","button", "img", "input", "nav", "video", "script",
+			"style", "a", "link", "footer", "object", "figure", "track",
+			"noscript", "form"};
 	private File inputFile;
 	private Document doc;
 	private String stringfile;
-	private ArrayList<Token> tokens = new ArrayList<Token>(); 
+	private ArrayList<Token> tokens = new ArrayList<Token>();
 	private ArrayList<Pair> pairs = new ArrayList<Pair>();
 	private Pair mainContentPair = new Pair(0,0,0);
 	private String mainContent = "";
-	
+
 	public NoiseRemoval() {
 	}
-	
+
 	public void getTokens() {
 //		System.out.println("Converting to bits");
 //		for (Token t : tokens) {
@@ -63,19 +63,19 @@ public class NoiseRemoval {
 	public void setStringFile(String str) {
 		stringfile = str;
 	}
-	
+
 	public int getStringFileSize() {
 		return stringfile.length();
 	}
-	
+
 	public String getStringFile() {
 		return stringfile;
 	}
-	
+
 	/**
 	 * Set the document with the given file
 	 * @param filePath
-	 */ 
+	 */
 	public void setDoc(String filePath) {
 		inputFile = new File(filePath);
 		try {
@@ -84,9 +84,9 @@ public class NoiseRemoval {
 			System.out.println("Error occured while loading the file");
 		}
 	}
-	
+
 	/**
-	 * Apply basic filters on the original HTML file to filter out obvious noises. 
+	 * Apply basic filters on the original HTML file to filter out obvious noises.
 	 * @return Filtered HTML content as String
 	 */
 	public void basicFilter(boolean noEmptyTags) {
@@ -98,13 +98,13 @@ public class NoiseRemoval {
 			removeEmptyTags();
 		}
 	}
-	
+
 	public int getBodySize() {
 		Elements elements = doc.select("body");
 //		System.out.println("Size of body: " + elements.size());
 		return elements.size();
 	}
-	
+
 	/**
 	 * Remove obvious noise tags
 	 */
@@ -113,7 +113,7 @@ public class NoiseRemoval {
 			doc.select(tag).remove();
 		}
 	}
-	
+
 	//gets tag to text ratio (of leaf nodes) and removes them if it is above a certain threshold
 	public void tagToTextRatio(String s,double ratio) {
 		//defining variables
@@ -151,13 +151,13 @@ public class NoiseRemoval {
 			tagToTextRatio(s.substring(s.indexOf(closeTag)+closeTag.length()),ratio);
 		}
 	}
-	
+
 	//removes all HTML aspects
 	public static String html2text(String html) {
-	    return Jsoup.parse(html).text();
+		return Jsoup.parse(html).text();
 	}
-	
-	
+
+
 	/**
 	 * Converts the doc to String
 	 * @return String
@@ -170,7 +170,7 @@ public class NoiseRemoval {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get the head of the doc and return it as String
 	 * @return
@@ -183,7 +183,7 @@ public class NoiseRemoval {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Get the body of the doc and return it as String.
 	 * @return String
@@ -196,7 +196,7 @@ public class NoiseRemoval {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Remove comments.
 	 */
@@ -212,27 +212,27 @@ public class NoiseRemoval {
 			@Override
 			public void tail(Node arg0, int arg1) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 		for (Node node : toRemove) {
 			node.remove();
 		}
 	}
-	
+
 	/**
 	 * Remove empty tags (element with no texts) after performing first removal.
 	 */
 	public void removeEmptyTags() {
 		Elements elements = doc.body().select("*");
-		
+
 		for (Element element : elements) {
 			if (!element.hasText()) {
 				element.remove();
-		 	}
+			}
 		}
 	}
-	
+
 	/**
 	 * Remove tags with a navigation purpose.
 	 */
@@ -242,7 +242,7 @@ public class NoiseRemoval {
 			doc.select(nav).remove();
 		}
 	}
-	
+
 	/**
 	 * Remove tags with a footer purpose.
 	 */
@@ -252,8 +252,8 @@ public class NoiseRemoval {
 			doc.select(footer).remove();
 		}
 	}
-	
-	
+
+
 	/**
 	 * Write the given String to a file with the given path.
 	 * @param str
@@ -265,13 +265,13 @@ public class NoiseRemoval {
 			FileWriter myWriter = new FileWriter(filePath, false);
 			myWriter.write(str);
 			myWriter.close();
-			System.out.println("Successfully wrote to the file.");			
+			System.out.println("Successfully wrote to the file.");
 		} catch (IOException e) {
 			System.out.println("An error occurted.");
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Tokenize the whole web-page. Valid tags = 1 and other tags/texts = 0.
 	 * @param str
@@ -304,28 +304,28 @@ public class NoiseRemoval {
 					Token newToken = new Token(token);
 					tokens.add(newToken);
 					skip += token.length();
-				// when there is no invalid opening tag
+					// when there is no invalid opening tag
 				} else if (validTagIndex < invalidTagIndex) {
 					token = subStr.substring(0, subStr.indexOf('>')+1);
 					Token newToken = new Token(token);
 					tokens.add(newToken);
 					skip += token.length();
-				// when there is an invalid opening tag, turn itself as a token
+					// when there is an invalid opening tag, turn itself as a token
 				} else {
 					token = subStr.substring(0,1);
 					Token newToken = new Token(token);
 					tokens.add(newToken);
 					skip += token.length();
 				}
-				
-			// when you see the first char of a word
+
+				// when you see the first char of a word
 			} else if (str.charAt(index) != ' ' && str.charAt(index) != '\n') {
 				subStr = str.substring(index);
 //				System.out.println("*********");
 //				System.out.println(subStr);
-				// texts in a tag(s) can either end before 
+				// texts in a tag(s) can either end before
 				// an empty space or the opening of a closed tag
-				// Get two and compare the size and the one with 
+				// Get two and compare the size and the one with
 				// the smaller size will be the token.
 				if (subStr.indexOf(' ') != -1) {
 					token = subStr.substring(0, subStr.indexOf(' '));
@@ -333,16 +333,16 @@ public class NoiseRemoval {
 					if (token.length() > temp.length()) {
 						token = temp;
 					}
-				// when it's the last word that does not end with an empty space
+					// when it's the last word that does not end with an empty space
 				} else {
 					token = subStr.substring(0, subStr.indexOf('<'));
 				}
-				
+
 				Token newToken = new Token(token);
 				tokens.add(newToken);
 				skip += token.length();
-			
-			// skip new lines or empty spaces
+
+				// skip new lines or empty spaces
 			} else {
 //				System.out.println("empty space");
 				skip++;
@@ -350,7 +350,7 @@ public class NoiseRemoval {
 			index += skip;
 		}
 	}
-	
+
 	/**
 	 * Calculate the weight for a given interval, i - j.
 	 * @param i
@@ -362,22 +362,22 @@ public class NoiseRemoval {
 		for (int k = 0; k < i; ++k) {
 			sum1 += tokens.get(k).getBit();
 		}
-		
+
 		int sum2 = 0;
 		for (int k = i; k < j; ++k) {
-			sum2 += (1 - tokens.get(k).getBit());		
+			sum2 += (1 - tokens.get(k).getBit());
 		}
-		
+
 		int sum3 = 0;
 		for (int k = j; k < tokens.size(); ++k) {
 			sum3 += tokens.get(k).getBit();
 		}
-		
+
 		int total = sum1 + sum2 + sum3;
-		
+
 		return total;
 	}
-	
+
 	/**
 	 * Loop thru the main content pairs and find the one with the highest weight.
 	 */
@@ -397,7 +397,7 @@ public class NoiseRemoval {
 		}
 //		Collections.sort(pairs, new CustomComparator());
 	}
-	
+
 	/**
 	 * Print top 20 pairs of indices after calculating their weights
 	 */
@@ -411,13 +411,13 @@ public class NoiseRemoval {
 //			System.out.println("---------------");
 //		}
 //	}
-//	
+//
 //	public void printMainContentInfo() {
 //		System.out.println("i: " + mainContentPair.getI());
 //		System.out.println("j: " + mainContentPair.getJ());
 //		System.out.println("Weight: " + mainContentPair.getWeight());
 //	}
-//	
+//
 //	public class CustomComparator implements Comparator<Pair> {
 //		@Override
 //	    public int compare(Pair o1, Pair o2) {
@@ -425,7 +425,7 @@ public class NoiseRemoval {
 //	        return o1.getWeight() > o2.getWeight() ? -1 : o1.getWeight() < o2.getWeight() ? 1: 0;
 //	    }
 //	}
-	
+
 	/**
 	 * Get the main content of the web-page after performing tokenToRatio.
 	 * @return
@@ -443,7 +443,7 @@ public class NoiseRemoval {
 		for (int i = mainContentPair.getI(); i < mainContentPair.getJ() + 1; ++i) {
 			if (tokens.get(i).getBit() == 0) {
 				result = result + tokens.get(i).getContent() + " ";
-			} else { 
+			} else {
 				if  (i > mainContentPair.getI() && tokens.get(i-1).getBit() == 0) {
 					result = result + "\n";
 				}
@@ -456,7 +456,7 @@ public class NoiseRemoval {
 		}
 		return result;
 	}
-	
+
 	/**
 	 * Check if first token is the open body tag.
 	 * @return True, if it is; otherwise, false.
@@ -469,7 +469,7 @@ public class NoiseRemoval {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Check if first token is the close body tag.
 	 * @return True, if it is; otherwise, false.
@@ -482,7 +482,7 @@ public class NoiseRemoval {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Check if the first element of the main content is an open tag.
 	 * If it's not, loop back until find an open tag.
@@ -494,7 +494,7 @@ public class NoiseRemoval {
 		}
 		mainContentPair.setI(index);
 	}
-	
+
 	/**
 	 * Check if the last element of the main content is a close tag.
 	 * If it's not, loop until find a close tag.
@@ -506,7 +506,7 @@ public class NoiseRemoval {
 		}
 		mainContentPair.setJ(index);
 	}
-	
+
 	/**
 	 * Get the opening of the HTML tag.
 	 * @return opening HTML tag as String
@@ -517,7 +517,7 @@ public class NoiseRemoval {
 		htmlTag = lines[0];
 		return htmlTag;
 	}
-	
+
 	/**
 	 * Combine the head section and the body section.
 	 * @return String of head and body combined.

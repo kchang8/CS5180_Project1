@@ -1,0 +1,713 @@
+<!doctype html>
+<html dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <title>CSU Campus Login Selector</title> 
+  <link rel="stylesheet" href="/css/bootstrap.css?1.0.754" media="screen"> 
+  <link rel="stylesheet" href="/css/style.css?1.0.755"> 
+  <style>
+        body, p, h1, h2, h3, h4, h5, h6, label, a {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+        a {
+            transition: color 250ms linear;
+        }
+        a:focus, input[type=select]:focus, .bd-form-input:focus {
+            outline-width: 1px;
+            outline-style: dashed;
+            outline-color: red;
+        }
+        #LoginButton {
+            width: 200px;
+            color: #ffffff;
+            background-color: #d00606;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+            padding: 10px 30px;
+            border: 2px solid #d00606;
+        }
+        #ErrorMessage {
+            background-color: rgba(221, 221, 221, .3);
+            border: 1px solid #d00606;
+        }
+        @media (max-width: 991px) {
+            .bd-help, .navbar-right {
+                width: 100%;
+                float: none;
+            }
+        }
+        @media (max-width: 767px) {
+            .rwd-spacer {
+                display: none;
+            }
+            .bd-headerarea-1 {
+                margin-top: -15px;
+                padding-bottom: 25px;
+            }
+            #section4 {
+                margin-top: -30px;
+            }
+        }
+        @media (max-width: 332px) {
+            .bd-textblock-4 {
+                font-size: 26px !important;
+            }
+            #section4 {
+                margin-top: -40px;
+            }
+            #section4 .bd-section-inner {
+                margin-top: -40px;
+            }
+        }
+    </style> 
+  <script> var themeHasJQuery = !!window.jQuery; </script> 
+  <script type="text/javascript" src="/scripts/jquery.js?1.0.754"></script> 
+  <script> window._$ = jQuery.noConflict(themeHasJQuery);</script> 
+  <script type="text/javascript" src="/scripts/bootstrap.min.js?1.0.754"></script> 
+  <script src="/scripts/CloudZoom.js?1.0.754"></script> 
+  <script src="/scripts/script.js?1.0.754"></script> <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/assets/style.ie.css?1.0.754">
+    <script src="/scripts/script.ie.js?1.0.754"></script>
+    <![endif]--> 
+ </head> 
+ <body class="bd-body-1 bootstrap bd-pagebackground"> 
+  <header class="bd-headerarea-1"> 
+   <div class="bd-layoutbox-3 clearfix"> 
+    <div class="bd-container-inner"> <a class="bd-logo-3" href="/"> <img class="bd-imagestyles" style="height:95%;width:95%" src="/images/341c911b30ed141006fc33b1c65588f2_csulogo.png" alt="CSU Logo"> </a> 
+    </div> 
+   </div> 
+  </header> 
+  <div class="bd-stretchtobottom-1 bd-stretch-to-bottom" data-control-selector=".bd-contentlayout-1"> 
+   <div class="bd-contentlayout-1 bd-page-width   bd-sheetstyles "> 
+    <div class="bd-container-inner"> 
+     <div class="bd-layoutitemsbox-1 bd-flex-wide"> 
+      <div class="bd-content-13"> 
+       <div class="bd-container-inner"> 
+        <div class="bd-htmlcontent-1" data-page-id="page.0"> 
+         <section title="CSU Background Image" id="section4" class="bd-section-1 bd-tagstyles bd-bootstrap-btn bd-btn-default bd-aligncontent bd-aligncontent-2" data-aligncontent-size="page" data-section-title="Row with Background Image"> 
+          <div class="bd-section-inner"> 
+           <div class="bd-section-align-wrapper"> 
+            <div class="bd-layoutbox-6 clearfix"> 
+             <div class="bd-container-inner"> 
+              <div class="bd-container-inner"> 
+               <h1 class="bd-textblock-4 bd-content-element">Campus Login</h1> 
+               <div class="bd-separator-2  bd-separator-center bd-separator-content-center clearfix"> 
+                <div class="bd-container-inner"> 
+                 <div class="bd-separator-inner"> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="bd-spacer-2 clearfix"></div> 
+               <p class="bd-textblock-10 bd-content-element"> Select your campus from the dropdown, then click the Login button.&nbsp;<br> </p> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix"></div> 
+               <form method="post" action="./?entityID=https%3a%2f%2fsharepointsps.calstate.edu%2fshibboleth&amp;return=https%3a%2f%2fcsyou.calstate.edu%2fShibboleth.sso%2fLogin%3fSAMLDS%3d1%26target%3dss%253Amem%253Af27908adf30099e986b5d09e89a8f71d9f2d3bbe7caeb995e5ccf8ada19382a1" id="CampusSelector" class="bd-form-8"> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""> 
+                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="TPaRgXcrzu9CstU1qMqXqg9FO/FEdFPUm4xc4J2JoTiobqkfFoTMNTzaNN1ZXDj03xGutMiIugvzejBj9bMUqEpZppQ6Mz6Yy+UlPdar8+SoO6CLz6Qa1m5GFIX+bZng/3lc4C2hLAiMAXlvyoPpGvcA1VTs7xRrJ/dNvhT6v4z63w4v0aXgJ2UYVCwqBE4MMnUoiSRah99eAjobl3FVh/0npGPFN1tjPDPNQuamtOMBBVb9fV5kOeX8hC5v7rV9ZOnEuxaJkqGk+4fcg2cAeeGnNuC9lyOf5vI/Y9Fqa25ZTQEv11QVI0ne3xAQvBQslntTA+Tpfx85A3oaSuVF5pXgRgj+pJq4f+fpedjLByC1iohIQk2VAqZ5j3ZWGcHhkbQDOhd9RKocnlfDcKbEacD5hlz6Dl3YaLykDpYI9Gvks0EfuXt5BKz9REExNBXLzgM81TEda65tXp3/flu4CApTSR351s0sUj1f5dEwdXtzbbI3omeWEW7B6ADt3OCCiSAvLVIDQK5Ui1c858KnfvWRw/cVLETtdkvytoMwGPN8Cpw81O9YAkBoqHrSfeMqyM/K5Q3DDfLShvDn1o0aTjkDLPr1wiE9/k/NbN24I9RJLdbf/L/FgKzwKsjymmLNEAU+v6qSTOcwQO5AngJlH0zOVUAlxysy/1U7n2dPkLqobaV8BY7e1akXzCWRq9Zz1pUKhALxotNHNGnoh/uaGyHVDz5aamkFb5m5C8s3KWxKe7CUils/ChH5igbIspEMspuVu547x61t6E8WjCW9/GPXSSyTaLF+infWKPt0LtH/Anv9g/GlKROYbxDN6Wt1lE4aMKfUxDkKIfarekkuJKnIGdW7wBMgxRwPNRLZEaXRT5qGBAFCn41X08pvhTfD1f8OW1IpzOsSQDx5/Tk0rqLPa9iZyO5w4pzsarDHiUU84hCWml70H4UzwpLJnRPD"> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['CampusSelector'];
+if (!theForm) {
+    theForm = document.CampusSelector;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+                <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZNAPrWgD3FOIW5dS7OrLydWu4KUjhkE5hA3yv02r5gmLNfK2gXVU2nb-xgegtDJ-SA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <script src="/WebResource.axd?d=JoBkLzP19aTuxbWOhHobYiCXZ0Q17zMFM58zxGLpksrTSifnedQyyMnk6jqRGQln0cyzUG0KoYkt5RFhVguYlA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
+                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+                 <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NTn3/5HGp/BTc5tLsOg3pbC09EQSmXncRcc//b3Uwqke9ZUovMtsQISSkVFWReeyfomfjFxai1Tsy5YCQQ/laI0gYMHPneTyJeZQj0nIhobTUeUVGs5gJLH9AG8lutBlxG52O4pAt2LnxEI0esZpqCtYNTVPyNKvyNAG/CEVeoDQlSlChuT8SZqEhgHn5CGYE6wyKRcTiD9T8eSwxFYte0e/JDRsqMn4FaUJbrc621i9EH2FfvSNIKJLfQ/kH3Op5zTKYfkTSYHzMuKV0DgT3A3QbfJv+F/2kVg6e320FMSx82/hlgwW9A94/es4Lj5G+O0oDKRAfqDdFdzxsXrBynqfflAsiiqvINtTJLv62KfM5Cvin+rWy+6F/PdaAtS58NFU0pyO3DNMzff1zJhwW3Q5gN1y+Ztdx9d0d39Rx0MG7PDx6QL0peGsZeSqzvN+5KbFMSoeK7Om98MaKao10kfP054jyXYyiL/Lmm0I1uToy309gLCIgkkzILgUwLNPSbfgTR1PqF0HzejXXZtnOknOqghS78yJ+EFDjY8V0G4PlU4dQnFYUSWBn9z3kjZbeGh+pFQf84adklOWB9W0Xo7FwuIQs8trxtVeFbup0dTmYWVzKKgNtlHqwskRg7jCabwXtKxPAPNOhYm4j3vSkyfVV6TzMVbjekAaunyzTjFwOIe6mve17KIDNEfelJMC"> 
+                </div> 
+                <div class="bd-container-inner"> 
+                 <div class="container-fluid"> 
+                  <div class="bd-select-6 form-group"> <select name="campus" id="campus" class="bd-form-input" title="Campus List"> <option selected value="">Select your campus</option> <option value="csub">Bakersfield</option> <option value="co">Chancellor's Office</option> <option value="csuci">Channel Islands</option> <option value="csuchico">Chico</option> <option value="csudh">Dominguez Hills</option> <option value="csueastbay">East Bay</option> <option value="csufresno">Fresno</option> <option value="fullerton">Fullerton</option> <option value="humboldt">Humboldt</option> <option value="csulb">Long Beach</option> <option value="calstatela">Los Angeles</option> <option value="csum">Maritime</option> <option value="csumb">Monterey Bay</option> <option value="mlml">Moss Landing</option> <option value="csun">Northridge</option> <option value="csupomona">Pomona</option> <option value="csus">Sacramento</option> <option value="csusb">San Bernardino</option> <option value="sdsu">San Diego</option> <option value="sfsu">San Francisco</option> <option value="sjsu">San Jose</option> <option value="calpoly">San Luis Obispo</option> <option value="csusm">San Marcos</option> <option value="sonoma">Sonoma</option> <option value="csustan">Stanislaus</option> <option value="other">Other</option> </select> 
+                  </div> 
+                  <div class="bd-customhtml-2 bd-tagstyles bd-bootstrap-btn bd-btn-default"> 
+                   <div class="bd-container-inner bd-content-element"> 
+                    <p> <input type="submit" name="LoginButton" value="Login" id="LoginButton" class="bd-linkbutton-1 bd-button-19  bd-content-element"> </p> 
+                    <ul class="bd-menu-9 nav nav-pills navbar-right"> 
+                     <li class="bd-help"> <a title="Login Help" href="https://ds.calstate.edu/Help.html">Login Help&nbsp;</a></li> 
+                    </ul> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('campus');//]]>
+</script> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer></footer> 
+  <script type="text/javascript">
+        _$(function () {
+            _$('#campus').focus();
+        });
+    </script>  
+ </body>
+</html><!doctype html>
+<html dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <title>CSU Campus Login Selector</title> 
+  <link rel="stylesheet" href="/css/bootstrap.css?1.0.754" media="screen"> 
+  <link rel="stylesheet" href="/css/style.css?1.0.755"> 
+  <style>
+        body, p, h1, h2, h3, h4, h5, h6, label, a {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+        a {
+            transition: color 250ms linear;
+        }
+        a:focus, input[type=select]:focus, .bd-form-input:focus {
+            outline-width: 1px;
+            outline-style: dashed;
+            outline-color: red;
+        }
+        #LoginButton {
+            width: 200px;
+            color: #ffffff;
+            background-color: #d00606;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+            padding: 10px 30px;
+            border: 2px solid #d00606;
+        }
+        #ErrorMessage {
+            background-color: rgba(221, 221, 221, .3);
+            border: 1px solid #d00606;
+        }
+        @media (max-width: 991px) {
+            .bd-help, .navbar-right {
+                width: 100%;
+                float: none;
+            }
+        }
+        @media (max-width: 767px) {
+            .rwd-spacer {
+                display: none;
+            }
+            .bd-headerarea-1 {
+                margin-top: -15px;
+                padding-bottom: 25px;
+            }
+            #section4 {
+                margin-top: -30px;
+            }
+        }
+        @media (max-width: 332px) {
+            .bd-textblock-4 {
+                font-size: 26px !important;
+            }
+            #section4 {
+                margin-top: -40px;
+            }
+            #section4 .bd-section-inner {
+                margin-top: -40px;
+            }
+        }
+    </style> 
+  <script> var themeHasJQuery = !!window.jQuery; </script> 
+  <script type="text/javascript" src="/scripts/jquery.js?1.0.754"></script> 
+  <script> window._$ = jQuery.noConflict(themeHasJQuery);</script> 
+  <script type="text/javascript" src="/scripts/bootstrap.min.js?1.0.754"></script> 
+  <script src="/scripts/CloudZoom.js?1.0.754"></script> 
+  <script src="/scripts/script.js?1.0.754"></script> <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/assets/style.ie.css?1.0.754">
+    <script src="/scripts/script.ie.js?1.0.754"></script>
+    <![endif]--> 
+ </head> 
+ <body class="bd-body-1 bootstrap bd-pagebackground"> 
+  <header class="bd-headerarea-1"> 
+   <div class="bd-layoutbox-3 clearfix"> 
+    <div class="bd-container-inner"> <a class="bd-logo-3" href="/"> <img class="bd-imagestyles" style="height:95%;width:95%" src="/images/341c911b30ed141006fc33b1c65588f2_csulogo.png" alt="CSU Logo"> </a> 
+    </div> 
+   </div> 
+  </header> 
+  <div class="bd-stretchtobottom-1 bd-stretch-to-bottom" data-control-selector=".bd-contentlayout-1"> 
+   <div class="bd-contentlayout-1 bd-page-width   bd-sheetstyles "> 
+    <div class="bd-container-inner"> 
+     <div class="bd-layoutitemsbox-1 bd-flex-wide"> 
+      <div class="bd-content-13"> 
+       <div class="bd-container-inner"> 
+        <div class="bd-htmlcontent-1" data-page-id="page.0"> 
+         <section title="CSU Background Image" id="section4" class="bd-section-1 bd-tagstyles bd-bootstrap-btn bd-btn-default bd-aligncontent bd-aligncontent-2" data-aligncontent-size="page" data-section-title="Row with Background Image"> 
+          <div class="bd-section-inner"> 
+           <div class="bd-section-align-wrapper"> 
+            <div class="bd-layoutbox-6 clearfix"> 
+             <div class="bd-container-inner"> 
+              <div class="bd-container-inner"> 
+               <h1 class="bd-textblock-4 bd-content-element">Campus Login</h1> 
+               <div class="bd-separator-2  bd-separator-center bd-separator-content-center clearfix"> 
+                <div class="bd-container-inner"> 
+                 <div class="bd-separator-inner"> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="bd-spacer-2 clearfix"></div> 
+               <p class="bd-textblock-10 bd-content-element"> Select your campus from the dropdown, then click the Login button.&nbsp;<br> </p> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix"></div> 
+               <form method="post" action="./?entityID=https%3a%2f%2fsharepointsps.calstate.edu%2fshibboleth&amp;return=https%3a%2f%2fcsyou.calstate.edu%2fShibboleth.sso%2fLogin%3fSAMLDS%3d1%26target%3dss%253Amem%253Adfdb19d428b9ac6e8aa560f23cb9021cc0939fa590e9085219275f8fc11b3db3" id="CampusSelector" class="bd-form-8"> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""> 
+                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="c/Jko64u2TTmGQH7MWuHZHOHOJCc4nO0XtCslMfVPCHSOVuUVpjOPSRyn+PLwxQCc0XJWWZFFmCcPZRLKcjsXZ3XQRpfzNxSmYEVM1a6rE0iURWrltzXll2RL4QAxhmGU84hI2HUOOawqVkUHLfEK+3GnmvEiYNV195gQJgNJwCtgxOj0fyHm2TCD9X7mtxsurCygX2oXvzdO8GFfKKUuX2me5MfWII8rSTTZsMLgz/IgVKc4n5TN2N35JWb3udMjSW7NCL7jSX09zT9brdh01pDhUvhfpnp/AGV+m5DOYkbvl5mhM6KCEruGVY3Dc0WcU73nNz7AyXNGvGouHA8er8jnkyGqAW5KyRhTiZMGBnoOuoUV99SOJcbqj9B/hlcaA5sutlv43jUwjNz3pwoIFE0w2yjuryuknyEQLpnbTijW2jPN/CJQM+pH5bRtYazAJoC9L06W8Zr5gxVjMah9Op2ZJpjx+OndUM/gUnzRuw3PKMI38Fi9riuIlZqn0VTsXtX1JrBeqYyHxxJkWtaUVUZ85Cy1t5C1+AFqWeNUqAH34+T3oN1sIuSuU59YtTQCbkipO9qA4YpinxX5kpE9fadRHsgD3TGsK5bXZlzExT9tC8WREpmOkOYTl+vb0WOqEMTqu1a06PUo1NtC3MmDuWgz0WiF1aAuFzVcfFM2ybA1QUXUsGo0K14GHCSQRcwRRzMqvUFBdpvwNO+UbAtvCa+YLF79xx543hDHUsZvEi3wdccRQWEDM2yimK8sufQXub/JQccsHF3mm3N4Sb2BLTao1Y1wpeC7P9QSlbHv2T6Yd7M/P6ZS44/mAKBRn7I/Rl8zv/BvpLcAbE6ppTpycYbdBWbRJRo7qhd3uBNTTE3t9RoxAFC1tfrYQU+h8w2O53CI3Kw73yc2cKYfMb6u9PSd3DvfoIMqpI6BdPSutCP9es6yFGaKdw8NDRn4cvp"> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['CampusSelector'];
+if (!theForm) {
+    theForm = document.CampusSelector;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+                <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZNAPrWgD3FOIW5dS7OrLydWu4KUjhkE5hA3yv02r5gmLNfK2gXVU2nb-xgegtDJ-SA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <script src="/WebResource.axd?d=JoBkLzP19aTuxbWOhHobYiCXZ0Q17zMFM58zxGLpksrTSifnedQyyMnk6jqRGQln0cyzUG0KoYkt5RFhVguYlA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
+                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+                 <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="UQpbOvLtrWIQQrO7Fu6ETu21u8JBp+d62JkBzH7IHRqLTFwLjNo6jRxFzct1CH+xFWOGatGX6WZBK7R3UTmFErZfeYSfouKvL0vLN4ux7x8alhxsrI3YUPYmQg1nb8+wc4LCMJfI4txORsmUY221h4gFNosNtWoe3W5X5GyyljfUq12QIVVodzkmEv2MVcuZ3WNDjP502cJvpz+6QxnZy764Zr19xjphF2sRLKed+p19W/w2r7a4MQ9u1zQX+t2UxpVwqeYoX/sksxJlsmVSqVAutGfF0qYE0TNKIEPNl8S53k2MohNTHZ/lKb+Q5f12eNUelFrzj5zc24+BAFDQLk2hxE7W0Ky/pxu591WYr1GySJw9Gyjo2JgOhoVS9Xma3tWiuwYGoBhBZEqWsPHOSmr7qIvatHRDNW09Hhe5Hf2CmKI++nbpIXw8y324GG0sx12kKIuBU4o2NF6lTWetCeUE14vqeNOEoHVpbmbXfzviPeSQlO3iK1MESCNZhir5xvN5jNKubyyKoX4lUlEK4lkdP2pvArXS2aRyWLz1wQ0ek23tYTzQPoVYO6SS90sQ+NRpxLuUPZsBgLLU8kwL6Ik6rYA+xonjVgQLzWWxi3Qwi3moRku/oblA48hYOxHeFINSf6FKx6MIUPFF9g5km8r9o5ixbpXo5bkL3CYSTluQy50wx1wbpflNaBfujvio"> 
+                </div> 
+                <div class="bd-container-inner"> 
+                 <div class="container-fluid"> 
+                  <div class="bd-select-6 form-group"> <select name="campus" id="campus" class="bd-form-input" title="Campus List"> <option selected value="">Select your campus</option> <option value="csub">Bakersfield</option> <option value="co">Chancellor's Office</option> <option value="csuci">Channel Islands</option> <option value="csuchico">Chico</option> <option value="csudh">Dominguez Hills</option> <option value="csueastbay">East Bay</option> <option value="csufresno">Fresno</option> <option value="fullerton">Fullerton</option> <option value="humboldt">Humboldt</option> <option value="csulb">Long Beach</option> <option value="calstatela">Los Angeles</option> <option value="csum">Maritime</option> <option value="csumb">Monterey Bay</option> <option value="mlml">Moss Landing</option> <option value="csun">Northridge</option> <option value="csupomona">Pomona</option> <option value="csus">Sacramento</option> <option value="csusb">San Bernardino</option> <option value="sdsu">San Diego</option> <option value="sfsu">San Francisco</option> <option value="sjsu">San Jose</option> <option value="calpoly">San Luis Obispo</option> <option value="csusm">San Marcos</option> <option value="sonoma">Sonoma</option> <option value="csustan">Stanislaus</option> <option value="other">Other</option> </select> 
+                  </div> 
+                  <div class="bd-customhtml-2 bd-tagstyles bd-bootstrap-btn bd-btn-default"> 
+                   <div class="bd-container-inner bd-content-element"> 
+                    <p> <input type="submit" name="LoginButton" value="Login" id="LoginButton" class="bd-linkbutton-1 bd-button-19  bd-content-element"> </p> 
+                    <ul class="bd-menu-9 nav nav-pills navbar-right"> 
+                     <li class="bd-help"> <a title="Login Help" href="https://ds.calstate.edu/Help.html">Login Help&nbsp;</a></li> 
+                    </ul> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('campus');//]]>
+</script> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer></footer> 
+  <script type="text/javascript">
+        _$(function () {
+            _$('#campus').focus();
+        });
+    </script>  
+ </body>
+</html><!doctype html>
+<html dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <title>CSU Campus Login Selector</title> 
+  <link rel="stylesheet" href="/css/bootstrap.css?1.0.754" media="screen"> 
+  <link rel="stylesheet" href="/css/style.css?1.0.755"> 
+  <style>
+        body, p, h1, h2, h3, h4, h5, h6, label, a {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+        a {
+            transition: color 250ms linear;
+        }
+        a:focus, input[type=select]:focus, .bd-form-input:focus {
+            outline-width: 1px;
+            outline-style: dashed;
+            outline-color: red;
+        }
+        #LoginButton {
+            width: 200px;
+            color: #ffffff;
+            background-color: #d00606;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+            padding: 10px 30px;
+            border: 2px solid #d00606;
+        }
+        #ErrorMessage {
+            background-color: rgba(221, 221, 221, .3);
+            border: 1px solid #d00606;
+        }
+        @media (max-width: 991px) {
+            .bd-help, .navbar-right {
+                width: 100%;
+                float: none;
+            }
+        }
+        @media (max-width: 767px) {
+            .rwd-spacer {
+                display: none;
+            }
+            .bd-headerarea-1 {
+                margin-top: -15px;
+                padding-bottom: 25px;
+            }
+            #section4 {
+                margin-top: -30px;
+            }
+        }
+        @media (max-width: 332px) {
+            .bd-textblock-4 {
+                font-size: 26px !important;
+            }
+            #section4 {
+                margin-top: -40px;
+            }
+            #section4 .bd-section-inner {
+                margin-top: -40px;
+            }
+        }
+    </style> 
+  <script> var themeHasJQuery = !!window.jQuery; </script> 
+  <script type="text/javascript" src="/scripts/jquery.js?1.0.754"></script> 
+  <script> window._$ = jQuery.noConflict(themeHasJQuery);</script> 
+  <script type="text/javascript" src="/scripts/bootstrap.min.js?1.0.754"></script> 
+  <script src="/scripts/CloudZoom.js?1.0.754"></script> 
+  <script src="/scripts/script.js?1.0.754"></script> <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/assets/style.ie.css?1.0.754">
+    <script src="/scripts/script.ie.js?1.0.754"></script>
+    <![endif]--> 
+ </head> 
+ <body class="bd-body-1 bootstrap bd-pagebackground"> 
+  <header class="bd-headerarea-1"> 
+   <div class="bd-layoutbox-3 clearfix"> 
+    <div class="bd-container-inner"> <a class="bd-logo-3" href="/"> <img class="bd-imagestyles" style="height:95%;width:95%" src="/images/341c911b30ed141006fc33b1c65588f2_csulogo.png" alt="CSU Logo"> </a> 
+    </div> 
+   </div> 
+  </header> 
+  <div class="bd-stretchtobottom-1 bd-stretch-to-bottom" data-control-selector=".bd-contentlayout-1"> 
+   <div class="bd-contentlayout-1 bd-page-width   bd-sheetstyles "> 
+    <div class="bd-container-inner"> 
+     <div class="bd-layoutitemsbox-1 bd-flex-wide"> 
+      <div class="bd-content-13"> 
+       <div class="bd-container-inner"> 
+        <div class="bd-htmlcontent-1" data-page-id="page.0"> 
+         <section title="CSU Background Image" id="section4" class="bd-section-1 bd-tagstyles bd-bootstrap-btn bd-btn-default bd-aligncontent bd-aligncontent-2" data-aligncontent-size="page" data-section-title="Row with Background Image"> 
+          <div class="bd-section-inner"> 
+           <div class="bd-section-align-wrapper"> 
+            <div class="bd-layoutbox-6 clearfix"> 
+             <div class="bd-container-inner"> 
+              <div class="bd-container-inner"> 
+               <h1 class="bd-textblock-4 bd-content-element">Campus Login</h1> 
+               <div class="bd-separator-2  bd-separator-center bd-separator-content-center clearfix"> 
+                <div class="bd-container-inner"> 
+                 <div class="bd-separator-inner"> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="bd-spacer-2 clearfix"></div> 
+               <p class="bd-textblock-10 bd-content-element"> Select your campus from the dropdown, then click the Login button.&nbsp;<br> </p> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix"></div> 
+               <form method="post" action="./?entityID=https%3a%2f%2fsharepointsps.calstate.edu%2fshibboleth&amp;return=https%3a%2f%2fcsyou.calstate.edu%2fShibboleth.sso%2fLogin%3fSAMLDS%3d1%26target%3dss%253Amem%253A84848004e56d18c950c1c363533e861e68f639c34ed6fd1a39ca6faaef6ac7c4" id="CampusSelector" class="bd-form-8"> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""> 
+                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="BVQZvPT1b9JNR3uPkiZzEfUt+SOY4EW01RwjqtpXqEwhp4hHqJs9N38m6NUfltwWLBv/bTKXK7mwCHNYa+BSEwkg4M6QK6SfhfdjwTrO8Z1PJh8LEVySRA8Y9580OKEbUISbo8dZFSNQ50vFymSdz+0hdcOygh17nVSv+pIEjxL8KEZmoPSBIa0aemU0EWYV8FR+cyQt/Fon6U5RvqsuBrch6o1lnmFawCT/09GnIuAaxiARbjpteKFtwdKU+e4HMaqrXtLOaz141k12t58AEzpidkq/fHuwT9zBG1Sg3ULPQ1mDGHB+5Ll4IOkN7BEX4OPDp8sXuWJYddzTzVnc83hEO2lBLmSMBj51tRCiasKtT7fHebkzNSHuCWbT89An03YLOk1jJFSIbmM4vFqr6kxaNf8qz0IxzNjsrOMAUllpGYi5uvQSwGEDEpYZbnNeYUpJB0klVAj0qSZdophzdFaxYRParQBrbSQonWwD7CN/Md/acQlk7pF65BEILeNfBUacCH4sdu9kyu6VzHQJUKpn44FusCk9Cmg3OOsQBEmMIykkTNs9qvkd5l5IDptgqay7C7aLL8q8suaAu8AmnhOfwMcTXcLLUcS0iQQrFj66YkZIY1RVN0KF6o7vHA546CfEN3goWrIZLlv14NGeiDVxiGYyCkmyeuswmzAk4n/Z8V42p8GuVcOY+CJIca/oChCFt6VFUTf2E+JTZYNIg9VOS2ChfBrzFEOfZ/zQdN7P6KFRWZOYEcsAk8HbYsWwIBs/ChiKcorncvibRiNMOwyrXPvx6VdkRy35ywj7+cwVGK6EpYFf0rIBNGbPlPN2ZGYu2VsCOSFNUdBjSAQjCo6kaTgawfvxiHXKYJv8dbAf20oq2Drt8pzuBRz1TeYRr+YzAkduCYZHZkgJf+mRntv+k7lJAOYY7noLH76Cod0rYekTZQ21hxC9aPfw8IdG"> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['CampusSelector'];
+if (!theForm) {
+    theForm = document.CampusSelector;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+                <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZNAPrWgD3FOIW5dS7OrLydWu4KUjhkE5hA3yv02r5gmLNfK2gXVU2nb-xgegtDJ-SA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <script src="/WebResource.axd?d=JoBkLzP19aTuxbWOhHobYiCXZ0Q17zMFM58zxGLpksrTSifnedQyyMnk6jqRGQln0cyzUG0KoYkt5RFhVguYlA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
+                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+                 <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="g+xaKpV0hUAeuaQwrHi0ZApStu9apclfb8LAJ4KqBLpRsuz3NYCVdeyS9GppPQFFPlK4obvN7NNCL2N4Yk0PTfS2Wj8z0t2296wbXifcEZmyhcfsx1O7gVB2u2Zzd5jmcXj7fctIrr1bfEHIaxYSdYEQ2ENjzA0VdXYDaulPDWlWgpyjPXNIBoppugbgOqhvLU8M6ejt2tmyH7mFpbvbBhxhYY45wr+LUpEyneVkI0bLKY18JBagbZpWKyLtTas+lnJOHGLttC/FyCW8Mxu/5uQXOSsX04lpdIX/Dk2lzsBq3FWUpgk6kCl+FlpH+6qr6vabmhiuyfvh1IM8hwTsVEKnLkQ96qk3XZZOncOGqrQoqENEJM0cSKNqdeUzu8uHgvvTZe519MAtZq8Ty149TKSufAypzc2QRgkdfCqDb0HNvH5NV/pl02g/2KV8Fo6hVxnx9Fzh00lN/I3JAj5W6BFGoH8ZrnrGTGK02p9sRq8ieuoclD5gC5/r7x2jp9V+njR9waeFx8HezK77qgQMPc3J1zDHv0lSsH5QZxWXgys/vfXhDRoSVqEIwMDhaIyVp/E7zgIf6TN9qqpVKSCzw5braGxzHDQY1GBXvwXYTlCT2i3uVhR4MgpefZ8BYWfqNDwczBkOjFM0Nh3DR+zFMDBebMGhz2uK+hx8Xz4ykZPb56VKWHcRbsoIQgnEYqzP"> 
+                </div> 
+                <div class="bd-container-inner"> 
+                 <div class="container-fluid"> 
+                  <div class="bd-select-6 form-group"> <select name="campus" id="campus" class="bd-form-input" title="Campus List"> <option selected value="">Select your campus</option> <option value="csub">Bakersfield</option> <option value="co">Chancellor's Office</option> <option value="csuci">Channel Islands</option> <option value="csuchico">Chico</option> <option value="csudh">Dominguez Hills</option> <option value="csueastbay">East Bay</option> <option value="csufresno">Fresno</option> <option value="fullerton">Fullerton</option> <option value="humboldt">Humboldt</option> <option value="csulb">Long Beach</option> <option value="calstatela">Los Angeles</option> <option value="csum">Maritime</option> <option value="csumb">Monterey Bay</option> <option value="mlml">Moss Landing</option> <option value="csun">Northridge</option> <option value="csupomona">Pomona</option> <option value="csus">Sacramento</option> <option value="csusb">San Bernardino</option> <option value="sdsu">San Diego</option> <option value="sfsu">San Francisco</option> <option value="sjsu">San Jose</option> <option value="calpoly">San Luis Obispo</option> <option value="csusm">San Marcos</option> <option value="sonoma">Sonoma</option> <option value="csustan">Stanislaus</option> <option value="other">Other</option> </select> 
+                  </div> 
+                  <div class="bd-customhtml-2 bd-tagstyles bd-bootstrap-btn bd-btn-default"> 
+                   <div class="bd-container-inner bd-content-element"> 
+                    <p> <input type="submit" name="LoginButton" value="Login" id="LoginButton" class="bd-linkbutton-1 bd-button-19  bd-content-element"> </p> 
+                    <ul class="bd-menu-9 nav nav-pills navbar-right"> 
+                     <li class="bd-help"> <a title="Login Help" href="https://ds.calstate.edu/Help.html">Login Help&nbsp;</a></li> 
+                    </ul> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('campus');//]]>
+</script> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer></footer> 
+  <script type="text/javascript">
+        _$(function () {
+            _$('#campus').focus();
+        });
+    </script>  
+ </body>
+</html><!doctype html>
+<html dir="ltr"> 
+ <head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+  <title>CSU Campus Login Selector</title> 
+  <link rel="stylesheet" href="/css/bootstrap.css?1.0.754" media="screen"> 
+  <link rel="stylesheet" href="/css/style.css?1.0.755"> 
+  <style>
+        body, p, h1, h2, h3, h4, h5, h6, label, a {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+        }
+        a {
+            transition: color 250ms linear;
+        }
+        a:focus, input[type=select]:focus, .bd-form-input:focus {
+            outline-width: 1px;
+            outline-style: dashed;
+            outline-color: red;
+        }
+        #LoginButton {
+            width: 200px;
+            color: #ffffff;
+            background-color: #d00606;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+            -webkit-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+            padding: 10px 30px;
+            border: 2px solid #d00606;
+        }
+        #ErrorMessage {
+            background-color: rgba(221, 221, 221, .3);
+            border: 1px solid #d00606;
+        }
+        @media (max-width: 991px) {
+            .bd-help, .navbar-right {
+                width: 100%;
+                float: none;
+            }
+        }
+        @media (max-width: 767px) {
+            .rwd-spacer {
+                display: none;
+            }
+            .bd-headerarea-1 {
+                margin-top: -15px;
+                padding-bottom: 25px;
+            }
+            #section4 {
+                margin-top: -30px;
+            }
+        }
+        @media (max-width: 332px) {
+            .bd-textblock-4 {
+                font-size: 26px !important;
+            }
+            #section4 {
+                margin-top: -40px;
+            }
+            #section4 .bd-section-inner {
+                margin-top: -40px;
+            }
+        }
+    </style> 
+  <script> var themeHasJQuery = !!window.jQuery; </script> 
+  <script type="text/javascript" src="/scripts/jquery.js?1.0.754"></script> 
+  <script> window._$ = jQuery.noConflict(themeHasJQuery);</script> 
+  <script type="text/javascript" src="/scripts/bootstrap.min.js?1.0.754"></script> 
+  <script src="/scripts/CloudZoom.js?1.0.754"></script> 
+  <script src="/scripts/script.js?1.0.754"></script> <!--[if lte IE 9]>
+    <link rel="stylesheet" href="/assets/style.ie.css?1.0.754">
+    <script src="/scripts/script.ie.js?1.0.754"></script>
+    <![endif]--> 
+ </head> 
+ <body class="bd-body-1 bootstrap bd-pagebackground"> 
+  <header class="bd-headerarea-1"> 
+   <div class="bd-layoutbox-3 clearfix"> 
+    <div class="bd-container-inner"> <a class="bd-logo-3" href="/"> <img class="bd-imagestyles" style="height:95%;width:95%" src="/images/341c911b30ed141006fc33b1c65588f2_csulogo.png" alt="CSU Logo"> </a> 
+    </div> 
+   </div> 
+  </header> 
+  <div class="bd-stretchtobottom-1 bd-stretch-to-bottom" data-control-selector=".bd-contentlayout-1"> 
+   <div class="bd-contentlayout-1 bd-page-width   bd-sheetstyles "> 
+    <div class="bd-container-inner"> 
+     <div class="bd-layoutitemsbox-1 bd-flex-wide"> 
+      <div class="bd-content-13"> 
+       <div class="bd-container-inner"> 
+        <div class="bd-htmlcontent-1" data-page-id="page.0"> 
+         <section title="CSU Background Image" id="section4" class="bd-section-1 bd-tagstyles bd-bootstrap-btn bd-btn-default bd-aligncontent bd-aligncontent-2" data-aligncontent-size="page" data-section-title="Row with Background Image"> 
+          <div class="bd-section-inner"> 
+           <div class="bd-section-align-wrapper"> 
+            <div class="bd-layoutbox-6 clearfix"> 
+             <div class="bd-container-inner"> 
+              <div class="bd-container-inner"> 
+               <h1 class="bd-textblock-4 bd-content-element">Campus Login</h1> 
+               <div class="bd-separator-2  bd-separator-center bd-separator-content-center clearfix"> 
+                <div class="bd-container-inner"> 
+                 <div class="bd-separator-inner"> 
+                 </div> 
+                </div> 
+               </div> 
+               <div class="bd-spacer-2 clearfix"></div> 
+               <p class="bd-textblock-10 bd-content-element"> Select your campus from the dropdown, then click the Login button.&nbsp;<br> </p> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix rwd-spacer"></div> 
+               <div class="bd-spacer-5 clearfix"></div> 
+               <form method="post" action="./?entityID=https%3a%2f%2fsharepointsps.calstate.edu%2fshibboleth&amp;return=https%3a%2f%2fcsyou.calstate.edu%2fShibboleth.sso%2fLogin%3fSAMLDS%3d1%26target%3dss%253Amem%253Ab8bd73c1c1925e745f219ec40288a2b8ee79bf906f2dcb067237d6d18afdcec0" id="CampusSelector" class="bd-form-8"> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""> 
+                 <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="WX3ZyQfD5BDrwhJUPkDB7jS9LCYKaMlNxVTV0ZTNrOV4Z7SBYDdWghmv1ReOdW2CBgYz5+YlJM/+W8Nl/jhzCbgEkqo7MVf/ZlPZzbVgxkjAnWhpjZ0gEguW4lLjJjEqmaXjReOEylryZ06dAHJgNB7tFt0txZXLEDTCLVYaaqmYUuN4ohwS2kPC3FXGNgNxivzNymJoGBIlJZXy0vLLqOQ8kAQVXED5rKHDLgVtSfOscLsaxmMuWRyyJxcNZapFrJHGI7YxnoEm1MHlbvp2tvn/70ioDl5MAZQBGPANo34Bv2PBZZPZDL+hgqTVC9y2nNoHEjIr5wTS4wpgveG5L34Y7rmgBgo51Jd/Fasiy8rl9VCA0rDQsNGdLjkVQKyu/iV162Au37TOAqq66WhE/0SWxPqOs6iLnRhw+10e/xX9nY9Z/EAKbPTrveFeL8f2V3vR/F/NBdHMTwysXjcFTV2KYYsE0S0/Uf9Wc1NhYuNrVeiaP+0U6il1a67nYKsMIryS5QViFeUb/xTE9ZOd+cZWui3z3f4WWL7uDHLgvCaOb7NyQwceY68+c6LMINxqCkeHjiJ0SO/7OiCvgXie9WoF/61C71+AkHoE/OXdgjilCuq0gQ0zyzKAfwA1gwxml9N6L9ccj4fL3fyPWXhCy6Ikul3XVgcCHpoNn018QNAswU5D7+xTyA8aCoCnd87R/3IdGA4YFY4DSJvYDzfCxPDNGU3n5WBSifFEUTGMUk9uvpQ5Jxw0oSDPNjYJA9FkrOFakBchLD2MWBirs2ud8bFicT3fZYtExbwoyzFYYU8PQXogvpNlCxhOJ8sn2Sd1wwkOYtglsSDDx0iP3vE71qRsVN/OkXksLdr33wauhLfYc2e8CyORcjlbRfgPqMwwvDcyP/NhKBJNWK5ho1MsfnpqWd/AZqruHq2hEHlDM3HYGbOFLR+DCqcWiKhUL2jJ"> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['CampusSelector'];
+if (!theForm) {
+    theForm = document.CampusSelector;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script> 
+                <script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZNAPrWgD3FOIW5dS7OrLydWu4KUjhkE5hA3yv02r5gmLNfK2gXVU2nb-xgegtDJ-SA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <script src="/WebResource.axd?d=JoBkLzP19aTuxbWOhHobYiCXZ0Q17zMFM58zxGLpksrTSifnedQyyMnk6jqRGQln0cyzUG0KoYkt5RFhVguYlA2&amp;t=637290505350350503" type="text/javascript"></script> 
+                <div class="aspNetHidden"> 
+                 <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334"> 
+                 <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""> 
+                 <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""> 
+                 <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="MbQInZ4GAkgxZJJ4hTAcjceSyvk1zVuiI7MMHIMJ/S2WjyjvmUAkeSANaJ3aiGALEw/frND7ba2VsbCPJnCKi5O/Xb7MocRapjLN5nt+OYhUDuCNiBBRZ7V6LZGxgMWUTL2k8dPG/ys0xjwBv5ssSyBbMV11KRIF+gqTMQCxYbMa9iWa+cy6clRG03LEWCZ4YPy2LudCxSqj4vpeltxsEGReGi5HF+3SwKL58C9aiWseo8BqUM5iLojzIg7WkpfelVQV/zlzOWhvY90Mn69NlzjGB/oDcchf2dc2w2y6RiOOa8u8l23pVHO6QLUFByZDKQQr78TIUI/wa+Sutm0G4Cfr3oOMNqRpOyEI+n1fsNmS7sN/72axOLwJLFsfe2k/TbW0EwyDgTAORLkYfrZGKzBRuM4iCxdjmPQlcrYbiymJqXWw7tM6LawD2VdISV9GqMpllNxIIuJ3rw7cwsU98E0WlPiAiBaxD0NLh4t79GcllsmQBkap3YsVFFxpCb7A+GcymUFyWAD29r2EbG0Y+kMsDVWRuv8M0KrrYjMyteCR0hHZ8FPa8TpqvDOcLLr4at/dDuGORti3WSj78U8/MZK0WgBqzkxDtEzts7q9o1BFV3Mjq8wmNr11CcQH1Y5lCDPLGF70KpBbFH6kEbh7obRFj2EM/CCuPYhMJJWV2QUZHt5Rr4RTpN1i2g6/9WpQ"> 
+                </div> 
+                <div class="bd-container-inner"> 
+                 <div class="container-fluid"> 
+                  <div class="bd-select-6 form-group"> <select name="campus" id="campus" class="bd-form-input" title="Campus List"> <option selected value="">Select your campus</option> <option value="csub">Bakersfield</option> <option value="co">Chancellor's Office</option> <option value="csuci">Channel Islands</option> <option value="csuchico">Chico</option> <option value="csudh">Dominguez Hills</option> <option value="csueastbay">East Bay</option> <option value="csufresno">Fresno</option> <option value="fullerton">Fullerton</option> <option value="humboldt">Humboldt</option> <option value="csulb">Long Beach</option> <option value="calstatela">Los Angeles</option> <option value="csum">Maritime</option> <option value="csumb">Monterey Bay</option> <option value="mlml">Moss Landing</option> <option value="csun">Northridge</option> <option value="csupomona">Pomona</option> <option value="csus">Sacramento</option> <option value="csusb">San Bernardino</option> <option value="sdsu">San Diego</option> <option value="sfsu">San Francisco</option> <option value="sjsu">San Jose</option> <option value="calpoly">San Luis Obispo</option> <option value="csusm">San Marcos</option> <option value="sonoma">Sonoma</option> <option value="csustan">Stanislaus</option> <option value="other">Other</option> </select> 
+                  </div> 
+                  <div class="bd-customhtml-2 bd-tagstyles bd-bootstrap-btn bd-btn-default"> 
+                   <div class="bd-container-inner bd-content-element"> 
+                    <p> <input type="submit" name="LoginButton" value="Login" id="LoginButton" class="bd-linkbutton-1 bd-button-19  bd-content-element"> </p> 
+                    <ul class="bd-menu-9 nav nav-pills navbar-right"> 
+                     <li class="bd-help"> <a title="Login Help" href="https://ds.calstate.edu/Help.html">Login Help&nbsp;</a></li> 
+                    </ul> 
+                   </div> 
+                  </div> 
+                 </div> 
+                </div> 
+                <script type="text/javascript">
+//<![CDATA[
+WebForm_AutoFocus('campus');//]]>
+</script> 
+               </form> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </section> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <footer></footer> 
+  <script type="text/javascript">
+        _$(function () {
+            _$('#campus').focus();
+        });
+    </script>  
+ </body>
+</html>

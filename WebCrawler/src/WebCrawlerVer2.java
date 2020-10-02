@@ -1,3 +1,7 @@
+
+package com.mycompany.webcrawler2;
+
+
 import org.jsoup.Jsoup;
 import org.jsoup.Connection;
 import org.jsoup.nodes.Document;
@@ -5,10 +9,10 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.*;
+import com.opencsv.CSVWriter;
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.PrintWriter;
 
 public class webCrawler {
 	// creates hash map for all the links starting from seed and so on
@@ -16,7 +20,7 @@ public class webCrawler {
 	private HashMap<String, Integer> links;
 	
 	// sets max depth to crawl through
-	private static final int MAX_DEPTH = 4;
+	private static final int MAX_DEPTH = 3;
 	
 	// constructor
 	public webCrawler() {
@@ -53,11 +57,11 @@ public class webCrawler {
 				Connection.Response response = Jsoup.connect(URL).execute();
 				Document responseDoc = response.parse();
 				// Writes a html file of the current URL into repository folder
-				FileWriter myWriter = new FileWriter("./repository/" + document.title().replace(" ", "") + ".html", true);
-				myWriter.write(responseDoc.outerHtml());
+				FileWriter myWriter = new FileWriter("../repository/" + document.title().replace(" ", "") + ".html", true);
+                                myWriter.write(responseDoc.outerHtml());
 				myWriter.close();
-				System.out.println("Successfully downloaded page");
-				
+				//System.out.println("Page downloaded");
+                                
 				
 				// for loop loops through each outlink found from the url and
 				// recursively finds more outlinks 
@@ -65,28 +69,26 @@ public class webCrawler {
 					getLinks(page.attr("abs:href"), depth);
 				}
 			} catch (IOException e) {
-				// prints out error if the url CANNOT be crawled
-				// because of politeness policy or error 
 				System.err.println("For '" + URL + "': " + e.getMessage());
 			}
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		webCrawler wc = new webCrawler();
 		// set seed URL
-		wc.getLinks("https://www.cpp.edu/", 0);
+		wc.getLinks("https://www.cpp.edu/",1);
 		
-		// writes URL and outlinks to csv file
-		File csvFile = new File("report.csv");
-		try (PrintWriter cFile = new PrintWriter(csvFile)) {
-			Map<String, Integer> links = wc.getPageLinks();
-			for (Map.Entry<String, Integer> page : links.entrySet()) {
-				cFile.append(page.getKey() + ", " + page.getValue() + "\n");
-			}
-		} catch (IOException e) {
-			System.err.println(e.getMessage());
+		System.out.println("===FULL LIST OF LINKS CRAWLED===");
+		Map<String, Integer> links = wc.getPageLinks();
+		for (Map.Entry<String, Integer> page : links.entrySet()) {
+                    
+                        CSVWriter myWriter = new CSVWriter(new FileWriter("../repository/" + "report.csv", true));
+                        myWriter.writeNext(new String[]{page.getKey(), page.getValue().toString()});
+                        myWriter.close();
+			                               
 		}
+        
 	}
 
 }
