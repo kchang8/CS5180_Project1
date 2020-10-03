@@ -1,0 +1,689 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="content-type" content="text/html;charset=GB2312"> 
+  <meta http-equiv="Content-Language" content="utf-8"> 
+  <meta content="all" name="robots"> 
+  <title>????--??--???</title> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content=""> 
+  <meta name="filetype" content="1"> 
+  <meta name="publishedtype" content="1"> 
+  <meta name="pagetype" content="2"> 
+  <meta name="catalogs" content="413327"> <!-- style --> 
+  <link rel="stylesheet" href="/img/MAIN/2017/07/117545/page.css" type="text/css" media="all"> 
+  <script src="/img/MAIN/2017/07/117545/js/jquery-1.7.1.min.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/roundabout.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/roundshapes.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/main.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/jcarousellite_1.0.1.min.js" type="text/javascript" language="javascript"></script> 
+  <script language="JavaScript">
+$(document).ready(function(){
+	$(".jCarouselLite1").jCarouselLite({
+    btnNext: ".prev1",
+    btnPrev: ".next1",
+	speed: 1000,	
+	visible:1
+    });
+	$(".jCarouselLite2").jCarouselLite({
+    btnNext: ".prev2",
+    btnPrev: ".next2",
+	speed: 1000,
+	visible:1
+    });
+	$(".jCarouselLite3").jCarouselLite({
+    btnNext: ".prev3",
+    btnPrev: ".next3",
+	speed: 1000,
+	visible:1
+    });
+	$(".jCarouselLite4").jCarouselLite({
+    btnNext: ".prev4",
+    btnPrev: ".next4",
+	speed: 1000,
+	visible:1
+    });
+	});
+</script> 
+  <script>
+ $(document).ready(function() {
+    $(".p3_bg").height($("html body").height());
+	$(".p1_a li").bind('click',function(){
+      var index =  $(this).index();
+	  
+	  console.log(index)
+	  $(".p3_bg").show();
+			$(".p3_content").show();
+			$(".p3_content li").hide();
+			$(".p3_content li").eq(index).show();
+	})
+	/*$(".p1_a li").each(function(index, element) {
+        $(this).click(function(){
+			$(".p3_bg").show();
+			$(".p3_content").show();
+			$(".p3_content li").eq(index).show();
+			})
+	
+    });*/
+	$(".close").click(function(){
+			$(".p3_bg").hide();
+			$(".p3_content").hide();
+		
+		
+		})		
+	});
+ 
+$(document).ready(function() {
+	//var AccordionNum = 0;
+	var AccordionLen = $(".videoPic ul li").length-1;
+	var AccordionWidth = parseInt(940-80*AccordionLen);
+	$(".videoPic ul li").eq(0).addClass("on").css({"width":AccordionWidth});
+	
+	$(".videoText li").hide();
+	$(".videoText li").eq(0).show();
+	$(".videoPic li").eq(0).css("margin-left",0)
+	
+	$(".videoPic ul li").mouseover(function(){
+		$(this).stop().stop().animate({width:AccordionWidth},500).siblings("li").stop().animate({width:100},500);
+		$(".videoPic ul li").removeClass('on');	
+		$(".videoPic ul li").css("overflow","hidden");
+    	$(this).addClass('on');
+		$(this).css("overflow","visible");
+		
+		$(".videoText li").hide();
+		$(".videoText li").eq($(this).index()).show();
+	});
+})
+ </script> 
+  <script src="http://www.people.com.cn/img/2011ptv2/showPeopleVideoPlayerMulti.js" type="text/javascript"></script> 
+ </head> 
+ <body> <!--top nav--> 
+  <div class="top_nav w1000 "> <a href="http://www.people.com.cn" target="_blank"><img src="http://www.people.com.cn/img/MAIN/2014/06/114539/images/nav/logo_rmw.png" alt="?????"></a><span></span> 
+  </div> 
+  <div class="top clearfix w1000"> 
+   <h1></h1> 
+   <div class="fenxiang"> 
+    <div class="bdshare"> 
+     <div class="bdsharebuttonbox">
+      <a href="#" class="bds_more" data-cmd="more">????</a><a href="#" class="bds_people" data-cmd="people" title="???????"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="?????"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="???????"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="???????"></a>
+     </div> 
+     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script> 
+    </div> 
+   </div> 
+  </div> <!--??--> 
+  <div class="p_video" style="display:block;"> 
+   <div class="w1000"> 
+    <div class="pvideo_link">
+     <a href="#" target="_blank"><img src="/img/MAIN/2017/07/117545/images/nTitle1.png"></a>
+    </div> 
+    <div class="videoBox"> 
+     <div id="pvpShowDiv">
+      <script type="text/javascript" src="http://c.wrating.com/v2_pre.js"></script> 
+      <script type="text/javascript">showPlayer({id:"%2Fpvservice%2Fxml%2F2017%2F8%2F2%2F06dc2d0e-ad22-4823-9131-b012f7cb4004.xml%3Fadtags%3D%2Fpvservice%2Fxml%2F2017%2F8%2F2%2Fed9754fd-0aa4-4602-8df6-7d3bbf95392f.xml%3Fadtags%3D%2Fpvservice%2Fxml%2F2017%2F8%2F2%2Fa7d2207e-6035-41bd-a556-ba64571c0e2d.xml%3Fadtags%3D",skip:false,showid:"pvpShowDiv",name:"player_1",width:1000,height:560,autoplay:0});</script>
+     </div> 
+    </div> 
+    <div class="videoPic"> 
+     <ul> 
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/06dc2d0e-ad22-4823-9131-b012f7cb4004.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0802/MAIN201708021333400252755917309.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/c1c3c485-f50c-4718-b16e-7a5f95867802.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708010921418998518603106.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/ed9754fd-0aa4-4602-8df6-7d3bbf95392f.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011110181850202902231.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/093a0a4a-9269-45a9-85b8-b67b2f4d43bb.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708010930372434171789895.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/0c144df0-07b8-4380-b5ed-c4348f83213f.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011016311707982792750.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/a7d2207e-6035-41bd-a556-ba64571c0e2d.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011102284298304963379.png" width="100" height="100"></a></li> 
+     </ul> 
+    </div> 
+    <div class="videoText"> 
+     <li><h2>??????? ?????????</h2><p>????90????????“????”????????????????????????????????????????????????????????????????</p></li>
+     <li><h2>?????????????????</h2><p>?????????????????13????????????</p></li>
+     <li><h2>???????? ?????????</h2><p>?“???”??????????????</p></li>
+     <li><h2>?????????????????????</h2><p>?????????????????????????</p></li>
+     <li><h2>???????????? ??????</h2><p>??????????“???”?????????????</p></li>
+     <li><h2>??????????????? ?????</h2><p>?????????????5384??????????</p></li> 
+    </div> 
+   </div> 
+  </div> <!--????--> <!--p1????--> 
+  <div class="p1_bg"> 
+   <div class="p1_link">
+    <a href="#" target="_blank"></a>
+   </div> 
+   <div class="p1_con  clearfix"> 
+    <ul> 
+     <li><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank"><img src="/NMediaFile/2017/0719/MAIN201707191105003830500663658.jpg" width="780" height="440" border="0" alt="??????????? ???-20?????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></span></li> 
+     <li><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201002272724880570153.jpg" width="780" height="440" border="0" alt="???????? ??“???”????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></span></li> 
+     <li><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank"><img src="/NMediaFile/2017/0719/MAIN201707191411018017703723543.jpg" width="780" height="440" border="0" alt="??????????????????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></span></li> 
+    </ul> <!-- <div class="prev"></div>
+	<div class="next"></div>--> 
+   </div> 
+  </div> <!--p2????--> 
+  <div class="p2_con  clearfix"> 
+   <div class="p2_link"></div> 
+   <div class="w1000"> <!--p2_box1--> 
+    <div class="p2_box1 fl"> 
+     <h2><img src="/NMediaFile/2017/0721/MAIN201707210858260799280917003.png" width="179" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite1"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev1 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next1 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0713/c1011-29402747.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201120186086158948311.jpg" width="400" height="260" border="0" alt="?“??”?????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0713/c1011-29402747.html" target="_blank">?“??”?????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0725/c1011-29426055.html" target="_blank">???????? ????????</a></li> 
+       <li><a href="/n1/2017/0726/c413327-29428739.html" target="_blank">??“????”???????????</a></li> 
+       <li><a href="/n1/2017/0727/c1011-29431287.html" target="_blank">?????????????? ????????</a></li> 
+       <li><a href="/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></li> 
+       <li><a href="/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 1 end--> <!--p2_box2--> 
+    <div class="p2_box1  fr"> 
+     <h2 class="tit2"><img src="/NMediaFile/2017/0721/MAIN201707210905280513566607931.png" width="183" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite2"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev2 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next2 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201102194773218442055.jpg" width="400" height="260" border="0" alt="?????????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">?????????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0731/c1011-29439394.html" target="_blank">??“??”??????</a></li> 
+       <li><a href="/n1/2017/0721/c1011-29419499.html" target="_blank">??????? ?????????????</a></li> 
+       <li><a href="/n1/2017/0722/c1011-29421917.html" target="_blank">????&#xfffd;??????????&#xfffd;?“??”</a></li> 
+       <li><a href="/n1/2017/0713/c1011-29402293.html" target="_blank">????????????????</a></li> 
+       <li><a href="/n1/2017/0716/c1011-29407866.html" target="_blank">30??????????????? </a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 2 end--> <!--p2_box1--> 
+    <div class="p2_box1 fl"> 
+     <h2 class="tit3"><img src="/NMediaFile/2017/0721/MAIN201707210910463531870083682.png" width="172" height="131" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite3"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev3 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next3 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0717/c1011-29409547.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201035512383882678697.jpg" width="400" height="260" border="0" alt="?????????????? 82???????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0717/c1011-29409547.html" target="_blank">?????????????? 82???????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0723/c1011-29422462.html" target="_blank">??????????????</a></li> 
+       <li><a href="/n1/2017/0725/c1011-29426055.html" target="_blank">???????? ????????</a></li> 
+       <li><a href="/n1/2017/0719/c1011-29413744.html" target="_blank">???????????????????</a></li> 
+       <li><a href="/n1/2017/0719/c1011-29415234.html" target="_blank">??13???????????</a></li> 
+       <li><a href="/n1/2017/0720/c1011-29418074.html" target="_blank">??????????????????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 1 end--> <!--p2_box2--> 
+    <div class="p2_box1 fr"> 
+     <h2 class="tit4"><img src="/NMediaFile/2017/0721/MAIN201707210905458168674940697.png" width="180" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite4"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev4 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next4 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0715/c1011-29406683.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201113375841864841193.jpg" width="400" height="260" border="0" alt="???????????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0715/c1011-29406683.html" target="_blank">???????????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0725/c1011-29427504.html" target="_blank">????????????“??????”</a></li> 
+       <li><a href="/n1/2017/0726/c413327-29428739.html" target="_blank">??“????”???????????</a></li> 
+       <li><a href="/n1/2017/0726/c1011-29429967.html" target="_blank">“???”?????????</a></li> 
+       <li><a href="/n1/2017/0714/c1011-29404108.html" target="_blank">???????</a></li> 
+       <li><a href="/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 2 end--> 
+   </div> 
+  </div> <!--p3????--> 
+  <div class="p3_c_bg"> 
+   <div class="p3_con "> 
+    <h2><a href="#" target="_blank"><img src="/img/MAIN/2017/07/117545/images/p4_tit.png" width="301" height="380"></a></h2> 
+    <div class="p3_1 "> 
+     <ul class="p1_a"> 
+      <li><img src="/NMediaFile/2017/0724/MAIN201707241338235401724856666.jpg" width="190" height="189" border="0"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109073840893484525.jpg" width="190" height="189" border="0" alt="??????????? ???-20?????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109070909906234752.jpg" width="190" height="189" border="0" alt="???????? ??“???”????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211413581051260360316.jpg" width="190" height="189" border="0" alt="???????? ?????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109072510591000713.jpg" width="190" height="189" border="0" alt="??????????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109075183466891481.jpg" width="190" height="189" border="0" alt="?????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109069424089390178.jpg" width="190" height="189" border="0" alt="????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211333497122365441869.jpg" width="190" height="189" border="0" alt="30??????????????? "></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211359281174641912064.jpg" width="190" height="189" border="0" alt="????????????????"></li> 
+     </ul> <!--???--> 
+     <div class="p3_content"> 
+      <div class="close">
+       <img src="/img/MAIN/2017/07/117545/images/close.png">
+      </div> 
+      <ul> 
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0724/c1011-29424350.html" target="_blank">??????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0724/c1011-29424350.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??3?8?“?????”???????????????????????????????????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?1950?3????1983?6????????????33????33????????????“?????????”?</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??????????????????????"???"??????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0721/c1011-29419499.html" target="_blank">???????? ?????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0721/c1011-29419499.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??16??????????????????????6300??“????”?</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;???????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">?????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;???????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0720/c1011-29418256.html" target="_blank">????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0720/c1011-29418256.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?????????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0716/c1011-29407866.html" target="_blank">30???????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0716/c1011-29407866.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;????????????????????????????????????????????????????????????“??”??????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0721/c413327-29420781.html" target="_blank">????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0721/c413327-29420781.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?????16?????????40?????????????????????????????????????????????????????</a></p>
+        </div> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--p4--> 
+  <div class="p4_con"> 
+   <h2></h2> 
+   <div class="p4_1 w1000">
+    <iframe id="zhongban" 0 width="1000" height="650" frameborder="0" scrolling="no" src="http://t.people.com.cn/openLiveShow.action?ie=utf-8&amp;ptopic=%25E8%2580%2581%25E5%2585%25B5%25E6%259D%25A5%25E4%25BF%25A1&amp;stopic=%25E8%2580%2581%25E5%2585%25B5%25E6%259D%25A5%25E4%25BF%25A1&amp;width=1000&amp;height=650&amp;nickNames=&amp;gid=0&amp;roll=0&amp;interval=3000&amp;appkey=9450803942&amp;input=1&amp;vip=0&amp;moderated=1&amp;title=1&amp;liveCode=jzfpgxx&amp;isMLive=0"></iframe>
+   </div> <!--copyright--> 
+   <style type="text/css">
+#copyright{width:980px; margin:0px auto; font-size:12px; text-align:center; padding:20px 0; line-height:180%; clear:both;}
+</style> 
+   <div id="copyright">
+    ? ? ? ? ? ? ? ?? ? ? ? ? ? ? ? ? ?
+    <br> Copyright &copy; 1997-2017 by www.people.com.cn. all rights reserved
+   </div> 
+  </div> 
+  <script src="/css/2010tianrun/webdig_test.js" language="javascript" type="text/javascript"></script>  
+ </body>
+</html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+ <head> 
+  <meta http-equiv="content-type" content="text/html;charset=GB2312"> 
+  <meta http-equiv="Content-Language" content="utf-8"> 
+  <meta content="all" name="robots"> 
+  <title>????--??--???</title> 
+  <meta name="description" content=""> 
+  <meta name="keywords" content=""> 
+  <meta name="filetype" content="1"> 
+  <meta name="publishedtype" content="1"> 
+  <meta name="pagetype" content="2"> 
+  <meta name="catalogs" content="413327"> <!-- style --> 
+  <link rel="stylesheet" href="/img/MAIN/2017/07/117545/page.css" type="text/css" media="all"> 
+  <script src="/img/MAIN/2017/07/117545/js/jquery-1.7.1.min.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/roundabout.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/roundshapes.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/main.js" type="text/javascript"></script> 
+  <script src="/img/MAIN/2017/07/117545/js/jcarousellite_1.0.1.min.js" type="text/javascript" language="javascript"></script> 
+  <script language="JavaScript">
+$(document).ready(function(){
+	$(".jCarouselLite1").jCarouselLite({
+    btnNext: ".prev1",
+    btnPrev: ".next1",
+	speed: 1000,	
+	visible:1
+    });
+	$(".jCarouselLite2").jCarouselLite({
+    btnNext: ".prev2",
+    btnPrev: ".next2",
+	speed: 1000,
+	visible:1
+    });
+	$(".jCarouselLite3").jCarouselLite({
+    btnNext: ".prev3",
+    btnPrev: ".next3",
+	speed: 1000,
+	visible:1
+    });
+	$(".jCarouselLite4").jCarouselLite({
+    btnNext: ".prev4",
+    btnPrev: ".next4",
+	speed: 1000,
+	visible:1
+    });
+	});
+</script> 
+  <script>
+ $(document).ready(function() {
+    $(".p3_bg").height($("html body").height());
+	$(".p1_a li").bind('click',function(){
+      var index =  $(this).index();
+	  
+	  console.log(index)
+	  $(".p3_bg").show();
+			$(".p3_content").show();
+			$(".p3_content li").hide();
+			$(".p3_content li").eq(index).show();
+	})
+	/*$(".p1_a li").each(function(index, element) {
+        $(this).click(function(){
+			$(".p3_bg").show();
+			$(".p3_content").show();
+			$(".p3_content li").eq(index).show();
+			})
+	
+    });*/
+	$(".close").click(function(){
+			$(".p3_bg").hide();
+			$(".p3_content").hide();
+		
+		
+		})		
+	});
+ 
+$(document).ready(function() {
+	//var AccordionNum = 0;
+	var AccordionLen = $(".videoPic ul li").length-1;
+	var AccordionWidth = parseInt(940-80*AccordionLen);
+	$(".videoPic ul li").eq(0).addClass("on").css({"width":AccordionWidth});
+	
+	$(".videoText li").hide();
+	$(".videoText li").eq(0).show();
+	$(".videoPic li").eq(0).css("margin-left",0)
+	
+	$(".videoPic ul li").mouseover(function(){
+		$(this).stop().stop().animate({width:AccordionWidth},500).siblings("li").stop().animate({width:100},500);
+		$(".videoPic ul li").removeClass('on');	
+		$(".videoPic ul li").css("overflow","hidden");
+    	$(this).addClass('on');
+		$(this).css("overflow","visible");
+		
+		$(".videoText li").hide();
+		$(".videoText li").eq($(this).index()).show();
+	});
+})
+ </script> 
+  <script src="http://www.people.com.cn/img/2011ptv2/showPeopleVideoPlayerMulti.js" type="text/javascript"></script> 
+ </head> 
+ <body> <!--top nav--> 
+  <div class="top_nav w1000 "> <a href="http://www.people.com.cn" target="_blank"><img src="http://www.people.com.cn/img/MAIN/2014/06/114539/images/nav/logo_rmw.png" alt="?????"></a><span></span> 
+  </div> 
+  <div class="top clearfix w1000"> 
+   <h1></h1> 
+   <div class="fenxiang"> 
+    <div class="bdshare"> 
+     <div class="bdsharebuttonbox">
+      <a href="#" class="bds_more" data-cmd="more">????</a><a href="#" class="bds_people" data-cmd="people" title="???????"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="?????"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="???????"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="???????"></a>
+     </div> 
+     <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script> 
+    </div> 
+   </div> 
+  </div> <!--??--> 
+  <div class="p_video" style="display:block;"> 
+   <div class="w1000"> 
+    <div class="pvideo_link">
+     <a href="#" target="_blank"><img src="/img/MAIN/2017/07/117545/images/nTitle1.png"></a>
+    </div> 
+    <div class="videoBox"> 
+     <div id="pvpShowDiv">
+      <script type="text/javascript" src="http://c.wrating.com/v2_pre.js"></script> 
+      <script type="text/javascript">showPlayer({id:"%2Fpvservice%2Fxml%2F2017%2F8%2F2%2F06dc2d0e-ad22-4823-9131-b012f7cb4004.xml%3Fadtags%3D%2Fpvservice%2Fxml%2F2017%2F8%2F2%2Fed9754fd-0aa4-4602-8df6-7d3bbf95392f.xml%3Fadtags%3D%2Fpvservice%2Fxml%2F2017%2F8%2F2%2Fa7d2207e-6035-41bd-a556-ba64571c0e2d.xml%3Fadtags%3D",skip:false,showid:"pvpShowDiv",name:"player_1",width:1000,height:560,autoplay:0});</script>
+     </div> 
+    </div> 
+    <div class="videoPic"> 
+     <ul> 
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/06dc2d0e-ad22-4823-9131-b012f7cb4004.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0802/MAIN201708021333400252755917309.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/c1c3c485-f50c-4718-b16e-7a5f95867802.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708010921418998518603106.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/ed9754fd-0aa4-4602-8df6-7d3bbf95392f.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011110181850202902231.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/093a0a4a-9269-45a9-85b8-b67b2f4d43bb.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708010930372434171789895.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/3/0c144df0-07b8-4380-b5ed-c4348f83213f.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011016311707982792750.png" width="100" height="100"></a></li>
+      <li><a href="javascript:" onclick="changePlayerVideo('/pvservice/xml/2017/8/2/a7d2207e-6035-41bd-a556-ba64571c0e2d.xml?adtags=','player_1')"><img src="/NMediaFile/2017/0801/MAIN201708011102284298304963379.png" width="100" height="100"></a></li> 
+     </ul> 
+    </div> 
+    <div class="videoText"> 
+     <li><h2>??????? ?????????</h2><p>????90????????“????”????????????????????????????????????????????????????????????????</p></li>
+     <li><h2>?????????????????</h2><p>?????????????????13????????????</p></li>
+     <li><h2>???????? ?????????</h2><p>?“???”??????????????</p></li>
+     <li><h2>?????????????????????</h2><p>?????????????????????????</p></li>
+     <li><h2>???????????? ??????</h2><p>??????????“???”?????????????</p></li>
+     <li><h2>??????????????? ?????</h2><p>?????????????5384??????????</p></li> 
+    </div> 
+   </div> 
+  </div> <!--????--> <!--p1????--> 
+  <div class="p1_bg"> 
+   <div class="p1_link">
+    <a href="#" target="_blank"></a>
+   </div> 
+   <div class="p1_con  clearfix"> 
+    <ul> 
+     <li><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank"><img src="/NMediaFile/2017/0719/MAIN201707191105003830500663658.jpg" width="780" height="440" border="0" alt="??????????? ???-20?????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></span></li> 
+     <li><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201002272724880570153.jpg" width="780" height="440" border="0" alt="???????? ??“???”????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></span></li> 
+     <li><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank"><img src="/NMediaFile/2017/0719/MAIN201707191411018017703723543.jpg" width="780" height="440" border="0" alt="??????????????????"></a><em></em><span><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></span></li> 
+    </ul> <!-- <div class="prev"></div>
+	<div class="next"></div>--> 
+   </div> 
+  </div> <!--p2????--> 
+  <div class="p2_con  clearfix"> 
+   <div class="p2_link"></div> 
+   <div class="w1000"> <!--p2_box1--> 
+    <div class="p2_box1 fl"> 
+     <h2><img src="/NMediaFile/2017/0721/MAIN201707210858260799280917003.png" width="179" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite1"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev1 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next1 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0713/c1011-29402747.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201120186086158948311.jpg" width="400" height="260" border="0" alt="?“??”?????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0713/c1011-29402747.html" target="_blank">?“??”?????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0725/c1011-29426055.html" target="_blank">???????? ????????</a></li> 
+       <li><a href="/n1/2017/0726/c413327-29428739.html" target="_blank">??“????”???????????</a></li> 
+       <li><a href="/n1/2017/0727/c1011-29431287.html" target="_blank">?????????????? ????????</a></li> 
+       <li><a href="/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></li> 
+       <li><a href="/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 1 end--> <!--p2_box2--> 
+    <div class="p2_box1  fr"> 
+     <h2 class="tit2"><img src="/NMediaFile/2017/0721/MAIN201707210905280513566607931.png" width="183" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite2"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev2 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next2 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201102194773218442055.jpg" width="400" height="260" border="0" alt="?????????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">?????????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0731/c1011-29439394.html" target="_blank">??“??”??????</a></li> 
+       <li><a href="/n1/2017/0721/c1011-29419499.html" target="_blank">??????? ?????????????</a></li> 
+       <li><a href="/n1/2017/0722/c1011-29421917.html" target="_blank">????&#xfffd;??????????&#xfffd;?“??”</a></li> 
+       <li><a href="/n1/2017/0713/c1011-29402293.html" target="_blank">????????????????</a></li> 
+       <li><a href="/n1/2017/0716/c1011-29407866.html" target="_blank">30??????????????? </a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 2 end--> <!--p2_box1--> 
+    <div class="p2_box1 fl"> 
+     <h2 class="tit3"><img src="/NMediaFile/2017/0721/MAIN201707210910463531870083682.png" width="172" height="131" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite3"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev3 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next3 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0717/c1011-29409547.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201035512383882678697.jpg" width="400" height="260" border="0" alt="?????????????? 82???????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0717/c1011-29409547.html" target="_blank">?????????????? 82???????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0723/c1011-29422462.html" target="_blank">??????????????</a></li> 
+       <li><a href="/n1/2017/0725/c1011-29426055.html" target="_blank">???????? ????????</a></li> 
+       <li><a href="/n1/2017/0719/c1011-29413744.html" target="_blank">???????????????????</a></li> 
+       <li><a href="/n1/2017/0719/c1011-29415234.html" target="_blank">??13???????????</a></li> 
+       <li><a href="/n1/2017/0720/c1011-29418074.html" target="_blank">??????????????????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 1 end--> <!--p2_box2--> 
+    <div class="p2_box1 fr"> 
+     <h2 class="tit4"><img src="/NMediaFile/2017/0721/MAIN201707210905458168674940697.png" width="180" height="153" border="0"> </h2> 
+     <div class="p2_1"> <!--????--> 
+      <div class="pic1 clearfix"> 
+       <div class="jCarouselLite4"> 
+        <div class="an"> 
+         <img src="/img/MAIN/2017/07/117545/images/left.png" class="prev4 b_left  "> 
+         <img src="/img/MAIN/2017/07/117545/images/right.png" class="next4 b_right  "> 
+        </div> 
+        <ul> 
+         <li><a href="http://military.people.com.cn/n1/2017/0715/c1011-29406683.html" target="_blank"><img src="/NMediaFile/2017/0720/MAIN201707201113375841864841193.jpg" width="400" height="260" border="0" alt="???????????????"></a>
+          <div></div><b><a href="http://military.people.com.cn/n1/2017/0715/c1011-29406683.html" target="_blank">???????????????</a></b></li> 
+        </ul> 
+       </div> 
+      </div> 
+      <ul class="list_14">
+       <li><a href="/n1/2017/0725/c1011-29427504.html" target="_blank">????????????“??????”</a></li> 
+       <li><a href="/n1/2017/0726/c413327-29428739.html" target="_blank">??“????”???????????</a></li> 
+       <li><a href="/n1/2017/0726/c1011-29429967.html" target="_blank">“???”?????????</a></li> 
+       <li><a href="/n1/2017/0714/c1011-29404108.html" target="_blank">???????</a></li> 
+       <li><a href="/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></li> 
+      </ul> <em class="more"><a href="#" target="_blank">??&gt;&gt;</a></em> 
+     </div> 
+    </div> <!--p2_box 2 end--> 
+   </div> 
+  </div> <!--p3????--> 
+  <div class="p3_c_bg"> 
+   <div class="p3_con "> 
+    <h2><a href="#" target="_blank"><img src="/img/MAIN/2017/07/117545/images/p4_tit.png" width="301" height="380"></a></h2> 
+    <div class="p3_1 "> 
+     <ul class="p1_a"> 
+      <li><img src="/NMediaFile/2017/0724/MAIN201707241338235401724856666.jpg" width="190" height="189" border="0"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109073840893484525.jpg" width="190" height="189" border="0" alt="??????????? ???-20?????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109070909906234752.jpg" width="190" height="189" border="0" alt="???????? ??“???”????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211413581051260360316.jpg" width="190" height="189" border="0" alt="???????? ?????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109072510591000713.jpg" width="190" height="189" border="0" alt="??????????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109075183466891481.jpg" width="190" height="189" border="0" alt="?????????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211109069424089390178.jpg" width="190" height="189" border="0" alt="????????"></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211333497122365441869.jpg" width="190" height="189" border="0" alt="30??????????????? "></li> 
+      <li><img src="/NMediaFile/2017/0721/MAIN201707211359281174641912064.jpg" width="190" height="189" border="0" alt="????????????????"></li> 
+     </ul> <!--???--> 
+     <div class="p3_content"> 
+      <div class="close">
+       <img src="/img/MAIN/2017/07/117545/images/close.png">
+      </div> 
+      <ul> 
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0724/c1011-29424350.html" target="_blank">??????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0724/c1011-29424350.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??3?8?“?????”???????????????????????????????????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">??????????? ???-20?????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0718/c1011-29410885.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?1950?3????1983?6????????????33????33????????????“?????????”?</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">???????? ??“???”????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0720/c1011-29416311.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??????????????????????"???"??????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0721/c1011-29419499.html" target="_blank">???????? ?????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0721/c1011-29419499.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;??16??????????????????????6300??“????”?</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">??????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0718/c1011-29412559.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;???????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">?????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0717/c1011-29408557.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;???????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0720/c1011-29418256.html" target="_blank">????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0720/c1011-29418256.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?????????????????????????????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0716/c1011-29407866.html" target="_blank">30???????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0716/c1011-29407866.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;????????????????????????????????????????????????????????????“??”??????????????????</a></p>
+        </div> </li>
+       <li> 
+        <div>
+         <strong><a href="http://military.people.com.cn/n1/2017/0721/c413327-29420781.html" target="_blank">????????????????</a></strong> 
+         <p><a href="http://military.people.com.cn/n1/2017/0721/c413327-29420781.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;?????16?????????40?????????????????????????????????????????????????????</a></p>
+        </div> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </div> <!--p4--> 
+  <div class="p4_con"> 
+   <h2></h2> 
+   <div class="p4_1 w1000">
+    <iframe id="zhongban" 0 width="1000" height="650" frameborder="0" scrolling="no" src="http://t.people.com.cn/openLiveShow.action?ie=utf-8&amp;ptopic=%25E8%2580%2581%25E5%2585%25B5%25E6%259D%25A5%25E4%25BF%25A1&amp;stopic=%25E8%2580%2581%25E5%2585%25B5%25E6%259D%25A5%25E4%25BF%25A1&amp;width=1000&amp;height=650&amp;nickNames=&amp;gid=0&amp;roll=0&amp;interval=3000&amp;appkey=9450803942&amp;input=1&amp;vip=0&amp;moderated=1&amp;title=1&amp;liveCode=jzfpgxx&amp;isMLive=0"></iframe>
+   </div> <!--copyright--> 
+   <style type="text/css">
+#copyright{width:980px; margin:0px auto; font-size:12px; text-align:center; padding:20px 0; line-height:180%; clear:both;}
+</style> 
+   <div id="copyright">
+    ? ? ? ? ? ? ? ?? ? ? ? ? ? ? ? ? ?
+    <br> Copyright &copy; 1997-2017 by www.people.com.cn. all rights reserved
+   </div> 
+  </div> 
+  <script src="/css/2010tianrun/webdig_test.js" language="javascript" type="text/javascript"></script>  
+ </body>
+</html>
