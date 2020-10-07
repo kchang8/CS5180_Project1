@@ -9,6 +9,15 @@ import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.PrintWriter;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.net.HttpURLConnection;
+import java.lang.String;
+import java.net.URL;
+import java.io.InputStream;
+import java.util.Scanner;
+import java.net.URLEncoder;
+import java.io.File;
 
 public class webCrawler {
 	// creates hash map for all the links starting from seed and so on
@@ -52,8 +61,24 @@ public class webCrawler {
 				// the contents of the page
 				Connection.Response response = Jsoup.connect(URL).execute();
 				Document responseDoc = response.parse();
+				
 				// Writes a html file of the current URL into repository folder
-				FileWriter myWriter = new FileWriter("./repository/" + document.title().replace(" ", "").replace(":", "").replace("|", "") + ".html", true);
+				String language = getLang(document.body().text().substring(0, Math.min(75, document.body().text().length())).replace(".", " "));
+				if (!language.equals("English")) {
+					System.out.println("it's not english");
+					System.out.println(language);
+					int x = 5;
+					x = 6;
+				}
+				System.out.println(language);
+				
+				String current_repo_path = "./repository/"+ language;
+				File directory_check = new File (current_repo_path);
+				if(!directory_check.isDirectory()){
+				  directory_check.mkdir();
+				}
+				FileWriter myWriter = new FileWriter("./repository/" + language + "/" 
+													+ document.title().replace(" ", "").replace(":", "").replace("|", "").replace(";", "")+ ".html", true);
 				myWriter.write(responseDoc.outerHtml());
 				myWriter.close();
 				System.out.println("Successfully downloaded page");
@@ -71,7 +96,54 @@ public class webCrawler {
 			}
 		}
 	}
+	
+	// function that detects language
+	public String getLang(String inputText){
+        String languagelayerendpoint = "http://api.languagelayer.com/detect?access_key=%s&query=%s";
+        String APIAccessKey = "e070762b63656bc7f826bc86e9be9b5e";
+        String newInputText = "";
+        try{
+           newInputText = URLEncoder.encode(inputText,"UTF-8");
+        }
+        catch(Exception e){
+           e.getMessage();
+        }
+        
+        String Request = String.format(languagelayerendpoint,APIAccessKey,newInputText);
+        String language = "";
+        try{
+            URL url = new URL(Request);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            InputStream is = connection.getInputStream();
+            
+            String text = null;
+            try (Scanner scanner = new Scanner(is)) {
+                text = scanner.useDelimiter("\\A").next();
+            }
+            is.close();
+            connection.disconnect();
+            // Finally we have the response
+            System.out.println(text);
+            String regex = "\"language_name\":\\s*\"\\w+\"";
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(text);
+            while (matcher.find()) {
+              System.out.print("Start index: " + matcher.start());
+              System.out.print(" End index: " + matcher.end());
+              System.out.println(" Found: " + matcher.group());
+              String lang1 = text.substring(matcher.start(),matcher.end());
+              language = (lang1.replaceAll("(\"|\\s)","").split(":")[1]);
+           }
+        } catch (Exception e){
+            e.printStackTrace();
+            System.out.print(e.getMessage());
+            language = "Unknown";
+        } 
+        
+        return language;
+     }
 
+	
 	public static void main(String[] args) {
 		webCrawler wc = new webCrawler();
 		// set seed URL
